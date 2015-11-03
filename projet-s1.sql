@@ -11,7 +11,7 @@ USE `projet_tut_S1`;
 --
 
 CREATE TABLE IF NOT EXISTS `Article` (
-  `id_Article` bigint(20) unsigned NOT NULL,
+  `id_Article` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `contenu_Article` text NOT NULL,
   `date_parution_Article` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nom_Article` varchar(255) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `Article` (
 --
 
 CREATE TABLE IF NOT EXISTS `Categorie` (
-  `id_Categorie` bigint(20) unsigned NOT NULL,
+  `id_Categorie` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `intitule_Categorie` varchar(255) NOT NULL,
   `description_Categorie` text NOT NULL,
   PRIMARY KEY (`id_Categorie`)
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `Categorie` (
 --
 
 CREATE TABLE IF NOT EXISTS `Connexion` (
-  `id_Connexion` bigint(20) unsigned NOT NULL,
+  `id_Connexion` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `Date_Connexion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `session_Connexion` varchar(255) NOT NULL,
   PRIMARY KEY (`id_Connexion`)
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `Connexion` (
 --
 
 CREATE TABLE IF NOT EXISTS `Modification` (
-  `id_Modification` bigint(20) unsigned NOT NULL,
+  `id_Modification` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `Date_Modification` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_Modification`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -68,5 +68,5 @@ CREATE TABLE IF NOT EXISTS `Utilisateur` (
   `MDP_Utilisateur` varchar(132) NOT NULL,
   `Mail_Utilisateur` varchar(255) NOT NULL,
   PRIMARY KEY (`id_Utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
