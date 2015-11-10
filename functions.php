@@ -40,5 +40,14 @@
 		// Retourne le contenu de la requete
 		return $ret;
 	}
-
+    
+     
+    
+    // Chargement de l'url indiquée ($url) sur timer ($timer)
+    function goPageTimer($url,$timer)
+    {
+        echo '
+          <script type="text/javascript">window.setTimeout("location=(\''.$url.'\');",'.$timer.');</script>
+        ';
+    }
 ?>
