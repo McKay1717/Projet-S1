@@ -16,14 +16,14 @@
 			      	   		   $config['mysql']['port']);
 
 		// Retourne le lien à la BDD
-		return $link
+		return $link;
 	}
 
 	// Fonction de requête à la BDD
 	// $req ==> requete à envoyer
 	function queryDB($req)
 	{
-		connectDB();
+		$link = connectDB();
 
 		// Envoie de la requete à la BDD 
 		// $que ==> enregistrement de ce que retourne la requete
@@ -32,7 +32,7 @@
 
 		// Récupère une ligne de résultat sous forme de tableau associatif
 		// $ret ==> variable qui sera retournée
-		$ret = mysqli_fetch_assoc($que)
+		$ret = mysqli_fetch_assoc($que);
 
 		// Fermeture de l'accès à la BDD
 		mysqli_close($link);
