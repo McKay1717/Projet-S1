@@ -1,3 +1,15 @@
-languages:
-   JavaScript: true
-   PHP: true
+engines:
+  rubocop:
+    enabled: true
+  golint:
+    enabled: true
+  gofmt:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+ratings:
+   paths:
+   - "**.**"
+   - "**.go"
