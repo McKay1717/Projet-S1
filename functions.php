@@ -43,7 +43,7 @@
     
      
     
-    // Chargement de l'url indiquée ($url) sur timer ($timer)
+    // Chargement de l'url indiquée ($url) sur timer ($timer, millisecondes)
     function goPageTimer($url,$timer)
     {
         echo '
