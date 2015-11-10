@@ -1,18 +1,29 @@
 <?php
 	
 
-	// Fonction BDD ($req ==> requete à la BDD)
-	function connectDB($req)
+	// Fonction de connexion à la BDD
+	function connectDB()
 	{
 		// Inclusion des paramètres de config de la BDD locale
 		include("config.php");
 
-		// Lien vers et connection à la BDD 
+		// Connection à la BDD 
+		// $link => Lien vers la BDD, variable retounée
 		$link = mysqli_connect($config['mysql']['host'], 
 			      	   		   $config['mysql']['user'], 
 			      	   		   $config['mysql']['password'], 
 			      	   		   $config['mysql']['db'],
 			      	   		   $config['mysql']['port']);
+
+		// Retourne le lien à la BDD
+		return $link
+	}
+
+	// Fonction de requête à la BDD
+	// $req ==> requete à envoyer
+	function queryDB($req)
+	{
+		connectDB();
 
 		// Envoie de la requete à la BDD 
 		// $que ==> enregistrement de ce que retourne la requete
