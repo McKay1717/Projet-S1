@@ -7,7 +7,8 @@ function HashPassword($mdp) {
 function login($mail, $mdp) {
 	include 'functions.php';
 	session_start ();
-	$query = "SELECT id_Utilisateur FROM Utilisateur WHERE Mail_Utilisateur = \"" . $mail . "\" AND MDP_Utilisateur = \"" . HashPassword ( $mdp ) . "\" ";
+	$link = connectDB ();
+	$query = "SELECT id_Utilisateur FROM Utilisateur WHERE Mail_Utilisateur = \"" . mysqli_real_escape_string ( $link, $mail ) . "\" AND MDP_Utilisateur = \"" . mysqli_real_escape_string ( $link, HashPassword ( $mdp ) ) . "\" ";
 	$row = queryDB ( $query );
 	// Login OK
 	echo count ( $row );
