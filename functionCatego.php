@@ -6,29 +6,29 @@
 		$article = queryDB("SELECT id_Categorie 
                              FROM Categorie
                             WHERE Categorie_article = " . $id_Article); 
-    	return $article;
+    		return $article;
   	}
 
 
   	//foncton set: definit la cateorie d'un article
   	function categoSet($id_Article,$nom_CategoString)
   	{
-	$selectQuery = "SELECT id_Categorie 
+		$selectQuery = "SELECT id_Categorie 
 				FROM Categorie 
 				WHERE intitule_Categorie = " . $nom_CategoString;
-	//tableau d'information sur le nom de la categorie	 	
-	$catego = queryDB($selectQuery)['id_Categorie'];
-	//variable associer a la mise a jour de la categorie
-    	$updateQuery = "UPDATE Article 
+				
+		//tableau d'information sur le nom de la categorie	 	
+		$catego = queryDB($selectQuery)['id_Categorie'];
+	
+		//variable associer a la mise a jour de la categorie
+    		$updateQuery = "UPDATE Article 
 		 	SET Categorie_article = " . $id_Article;
 		 	
-
-		 	
-    	//tableaux d'information sur la categorie
-    	queryDB($updateQuery);
+    		//tableaux d'information sur la categorie
+    		queryDB($updateQuery);
    
-    	//verification booleen de validation (inutile)
-    	//return !($article == $string);
+    		//verification booleen de validation (inutile)
+    		//return !($article == $string);
   	}
 
 ?>
