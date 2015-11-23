@@ -4,11 +4,11 @@ function HashPassword($mdp) {
 	return hash ( "sha256", hash ( "md5", $mdp ) );
 }
 // Fonction de connexion retourne vrai si la connexion est établie , faux dans le cas contraire
-function login($mail, $mdp) {
+function login($username, $mdp) {
 	include 'functions.php';
 	session_start ();
 	$link = connectDB ();
-	$query = "SELECT id_Utilisateur FROM Utilisateur WHERE Mail_Utilisateur = \"" . mysqli_real_escape_string ( $link, $mail ) . "\" AND MDP_Utilisateur = \"" . mysqli_real_escape_string ( $link, HashPassword ( $mdp ) ) . "\" ";
+	$query = "SELECT id_Utilisateur FROM Utilisateur WHERE nom_Utilisateur = \"" . mysqli_real_escape_string ( $link, $username ) . "\" AND MDP_Utilisateur = \"" . mysqli_real_escape_string ( $link, HashPassword ( $mdp ) ) . "\" ";
 	$row = queryDB ( $query );
 	// Login OK
 	echo count ( $row );
@@ -16,7 +16,7 @@ function login($mail, $mdp) {
 		$query = "INSERT INTO Connexion(User_Connexion) VALUES (" . $row ['id_Utilisateur'] . ")";
 		queryDB ( $query );
 		$_SESSION ['isloged'] = true;
-		$_SESSION ['user'] = $mail;
+		$_SESSION ['user'] = $username;
 		return true;
 	} else {
 		// Login Not Ok
@@ -35,4 +35,8 @@ function isLoged() {
 	} else {
 		return false;
 	}
+}
+function GetUsername()
+{
+	return $_SESSION ['user'];
 }

@@ -32,7 +32,14 @@ CREATE TABLE IF NOT EXISTS `Article` (
   KEY `article-categorie-link` (`Categorie_Article`),
   KEY `article-modification-link` (`last_modification_Article`),
   KEY `article-to-author-link` (`Auteur_Article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `Article`
+--
+
+INSERT INTO `Article` (`id_Article`, `contenu_Article`, `date_parution_Article`, `nom_Article`, `Categorie_Article`, `last_modification_Article`, `Auteur_Article`) VALUES
+(1, 'Ceci est un test', '2015-11-23 19:47:42', 'Ceci est un nom', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -45,7 +52,14 @@ CREATE TABLE IF NOT EXISTS `Categorie` (
   `intitule_Categorie` varchar(255) NOT NULL,
   `description_Categorie` text NOT NULL,
   PRIMARY KEY (`id_Categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `Categorie`
+--
+
+INSERT INTO `Categorie` (`id_Categorie`, `intitule_Categorie`, `description_Categorie`) VALUES
+(1, 'Categorie par defaut', '');
 
 -- --------------------------------------------------------
 
@@ -59,7 +73,16 @@ CREATE TABLE IF NOT EXISTS `Connexion` (
   `User_Connexion` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_Connexion`,`User_Connexion`),
   KEY `link-to-user-connextion` (`User_Connexion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `Connexion`
+--
+
+INSERT INTO `Connexion` (`id_Connexion`, `Date_Connexion`, `User_Connexion`) VALUES
+(1, '2015-11-21 17:44:03', 1),
+(2, '2015-11-21 17:47:36', 1),
+(3, '2015-11-21 18:00:28', 1);
 
 -- --------------------------------------------------------
 
@@ -71,7 +94,14 @@ CREATE TABLE IF NOT EXISTS `Modification` (
   `id_Modification` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Date_Modification` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_Modification`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `Modification`
+--
+
+INSERT INTO `Modification` (`id_Modification`, `Date_Modification`) VALUES
+(1, '2015-11-23 19:46:54');
 
 -- --------------------------------------------------------
 
@@ -84,8 +114,16 @@ CREATE TABLE IF NOT EXISTS `Utilisateur` (
   `Date_Utilisateur` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `MDP_Utilisateur` varchar(132) NOT NULL,
   `Mail_Utilisateur` varchar(255) NOT NULL,
+  `nom_Utilisateur` varchar(50) NOT NULL,
   PRIMARY KEY (`id_Utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `Utilisateur`
+--
+
+INSERT INTO `Utilisateur` (`id_Utilisateur`, `Date_Utilisateur`, `MDP_Utilisateur`, `Mail_Utilisateur`, `nom_Utilisateur`) VALUES
+(1, '2015-11-21 17:22:08', '65829e542dd151f443cc997270c61e78c042a82d687cc13844bf2c1813714600', 'test@mail.tld', '');
 
 --
 -- Contraintes pour les tables exportées
