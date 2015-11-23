@@ -16,13 +16,13 @@
 	$selectQuery = "SELECT id_Categorie 
 				FROM Categorie 
 				WHERE intitule_Categorie = " . $nom_CategoString;
-	
+	//tableau d'information sur le nom de la categorie	 	
+	$catego = queryDB($selectQuery)['id_Categorie'];
 	//variable associer a la mise a jour de la categorie
     	$updateQuery = "UPDATE Article 
 		 	SET Categorie_article = " . $id_Article;
 		 	
-	//tableau d'information sur le nom de la categorie	 	
-	queryDB($selectQuery);
+
 		 	
     	//tableaux d'information sur la categorie
     	queryDB($updateQuery);
