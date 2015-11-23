@@ -22,7 +22,7 @@
 		 	SET Categorie_article = " . $id_Article;
 		 	
 	//tableau d'information sur le nom de la categorie	 	
-	queryDB($id_Article);
+	queryDB($selectQuery);
 		 	
     	//tableaux d'information sur la categorie
     	queryDB($updateQuery);
