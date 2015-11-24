@@ -19,11 +19,11 @@
 				
 		//tableau d'information sur le nom de la categolol	 	
 		$catego = queryDB($selectQuery)['id_Categorie'];
-		queryDB($catego);
 		
 		//variable associer a la mise a jour de la categolol
-    		$updateQuery = "UPDATE Article 
-		 	SET Categorie_article = " . $id_Article;
+    		$updateQuery = "UPDATE Article
+		 	SET Categorie_article = " . $catego;
+		 	WHERE id_Article = " . $id_Article;
 		 	
     		//tableaux d'information sur la categolol
     		queryDB($updateQuery);
