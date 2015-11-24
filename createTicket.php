@@ -1,27 +1,29 @@
 <?php
-  include 'function.php'
+  include 'functions.php';
+  include 'function-login.php'
   
 //Fonction pour créer un nouvel article :
-  function newArticle($titre, $contenu)
+  function newArticle($titre, $contenu, $categorie)
   {
-    qweryDB("INSERT INTO Article(nom_Article, contenu_Article) VALUES (".$titre.",".$contenu.")");
+    queryDB('INSERT INTO Article(contenu_Article, date_parution_Article, nom_Article)
+    		 VALUES (\"'.$contenu.'\", 1, \"'.$titre.'\", \".'$categorie'.\", \"'.GetUsername().'\")');
   }
   
 //Fonction pour éditer un article :
   function editArticle($titre, $newct)
   {
-    qweryDB("UPDATE Article SET contenu_Article =".$newct." WHERE nom_Article = ".$titre);
+    queryDB('UPDATE Article SET contenu_Article =\"'.$newct.'\" WHERE nom_Article = \"'.$titre.'\"');
   }
   
-//Fonction pour catégoriser un article :
-  function getArticleCT($id, $categorie)
+//Fonction pour retourner le contenu d'un article.
+  function getArticleCT($id)
   {
-    qweryDB("UPDATE Article SET Categorie_Article =".$categorie."WHERE id_Article =".$id);
+    return queryDB('SELECT contenu_Article FROM Article WHERE id_Article = \"'.$id.'\"');
   }
   
 //Fonction pour supprimer un article :
   function deleteArticle($id)
   {
-    qweryDB("DELETE FROM Article WHERE id_Article = ".$id.");
+    queryDB('DELETE FROM Article WHERE id_Article = \"'.$id.'\"');
   }
 ?>
