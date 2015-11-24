@@ -10,21 +10,22 @@
   	}
 
 
-  	//foncton set: definit la cateorie d'un article
+  	//foncton set: definit la categolol d'un article
   	function categoSet($id_Article,$nom_CategoString)
   	{
 		$selectQuery = "SELECT id_Categorie 
 				FROM Categorie 
 				WHERE intitule_Categorie = " . $nom_CategoString;
 				
-		//tableau d'information sur le nom de la categorie	 	
+		//tableau d'information sur le nom de la categolol	 	
 		$catego = queryDB($selectQuery)['id_Categorie'];
-	
-		//variable associer a la mise a jour de la categorie
+		queryDB($catego);
+		
+		//variable associer a la mise a jour de la categolol
     		$updateQuery = "UPDATE Article 
 		 	SET Categorie_article = " . $id_Article;
 		 	
-    		//tableaux d'information sur la categorie
+    		//tableaux d'information sur la categolol
     		queryDB($updateQuery);
    
     		//verification booleen de validation (inutile)
