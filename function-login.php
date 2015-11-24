@@ -3,7 +3,7 @@ function HashPassword($mdp) {
 	// Hash le mot de pass en md5 puis en sha256
 	return hash ( "sha256", hash ( "md5", $mdp ) );
 }
-// Fonction de connexion retourne vrai si la connexion est établie , faux dans le cas contraire
+// Fonction de connexion retourne vrai si la connexion est Ã©tablie , faux dans le cas contraire
 function login($username, $mdp) {
 	include 'functions.php';
 	session_start ();
@@ -17,6 +17,7 @@ function login($username, $mdp) {
 		queryDB ( $query );
 		$_SESSION ['isloged'] = true;
 		$_SESSION ['user'] = $username;
+		$_SESSION ['id_user'] = $row ['id_Utilisateur'] ;
 		return true;
 	} else {
 		// Login Not Ok
@@ -24,11 +25,11 @@ function login($username, $mdp) {
 		return false;
 	}
 }
-// Met fin à la session en cours pour deconnecter l'utilisateur
+// Met fin Ã  la session en cours pour deconnecter l'utilisateur
 function disconnect() {
 	return session_destroy ();
 }
-// Renvoie vrai si un utilisateur est connecté , faux dans le cas contraire
+// Renvoie vrai si un utilisateur est connectÃ© , faux dans le cas contraire
 function isLoged() {
 	if (! empty ( $_SESSION ['isloged'] )) {
 		return $_SESSION ['isloged'];
@@ -39,4 +40,8 @@ function isLoged() {
 function GetUsername()
 {
 	return $_SESSION ['user'];
+}
+function GetUserID()
+{
+	return $_SESSION ['id_user'];
 }
