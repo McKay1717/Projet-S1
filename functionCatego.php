@@ -22,8 +22,8 @@
 		
 		//variable associer a la mise a jour de la categolol
     		$updateQuery = "UPDATE Article
-		 	SET Categorie_article = " . $catego;
-		 	WHERE id_Article = " . $id_Article;
+		 	SET Categorie_article = " . $catego .
+		 	"WHERE id_Article = " . $id_Article;
 		 	
     		//tableaux d'information sur la categolol
     		queryDB($updateQuery);
