@@ -4,7 +4,7 @@
 	{
 		//variable associer au tableaux d'information sur l' article 
 		$article = queryDB("SELECT id_Categorie 
-                             FROM Categorie
+                             FROM intitule_Categorie
                             WHERE Categorie_article = " . $id_Article); 
     		return $article;
   	}
@@ -30,6 +30,16 @@
    
     		//verification booleen de validation (inutile)
     		//return !($article == $string);
+  	}
+  	
+  	//fonction retournant la liste de toutes les categories
+  	function listcatego()
+  	{
+  		
+  		$categorie= "SELECT intitule_Categorie
+  			FROM Categorie
+  			 ";
+  		return $categoris;
   	}
 
 ?>
