@@ -32,13 +32,21 @@
     		//return !($article == $string);
   	}
   	
-  	//fonction retournant la liste de toutes les categories
-  	function listcatego()
+  	//fonction retournant la liste de tout les IDs des categories
+  	function listIDcatego()
   	{
-  		
-  		$categorie= "SELECT intitule_Categorie
+  		$categorie= queryDB("SELECT id_Categorie
   			FROM Categorie
-  			 ";
+  			 ");
+  		return $categoris;
+  	}
+  	
+  	//fonction retournant la liste de tout les noms des categories
+  	function listNOMcatego()
+  	{
+  		$categorie= queryDB("SELECT intitule_Categorie
+  			FROM Categorie
+  			 ");
   		return $categoris;
   	}
 
