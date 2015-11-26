@@ -38,7 +38,7 @@
   		$categorie= queryDB("SELECT id_Categorie
   			FROM Categorie
   			 ");
-  		return $categoris;
+  		return $categorie;
   	}
   	
   	//fonction retournant la liste de tout les noms des categories
@@ -47,7 +47,7 @@
   		$categorie= queryDB("SELECT intitule_Categorie
   			FROM Categorie
   			 ");
-  		return $categoris;
+  		return $categorie;
   	}
 
 ?>
