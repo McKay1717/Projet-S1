@@ -1,0 +1,26 @@
+a.pub_link
+{
+	display: inline-block;
+	min-width: 200px;
+	min-height: 110px;
+	width: 100%;
+	margin-bottom: 5px;
+	overflow: hidden;
+	box-shadow: 0 0 2px #555;
+	color: #353535;
+	text-decoration: none;
+}
+
+a.pub_link:hover
+{
+	box-shadow: 0 0 5px #111;
+}
+
+a.pub_link h2
+{
+	text-align: center;
+	background-color: #2D2D2D;
+	margin: 0;
+	color: white;
+	padding: 2px 0;
+}

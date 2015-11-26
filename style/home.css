@@ -1,0 +1,117 @@
+a.pub_link
+{
+	height: 110px;
+}
+
+h2
+{
+	margin: 8px 0;
+	text-align: center;
+}
+
+h2 a
+{
+	color: #222;
+}
+
+h2 a:hover
+{
+	color: #222;
+}
+
+a[href="categorie/liste.php"]
+{
+	display: block;
+	text-align: center;
+	margin: 10px 0;
+}
+
+#home_main, #recent_post, #head_post, #head_post2, .category, a.pub_link
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#home_main, #recent_post
+{
+	min-width: 300px;
+}
+
+#home_main
+{
+	width: 70%;
+}
+
+#recent_post
+{
+	width: 29%;
+}
+
+#head_post
+{
+	width: 60%;
+	height: 225px;
+}
+
+#head_post2
+{
+	width: 39%;
+	height: 220px;
+}
+
+#head_post2 a.link
+{
+	height: 110px;
+}
+
+.category
+{
+	width: 100%;
+}
+
+.category a.pub_link
+{
+	width: 32.8%;
+}
+
+@media screen and (max-width: 1270px)
+{
+	#home_main, #recent_post
+	{
+		width: 100%;
+	}
+
+	#recent_post a.pub_link
+	{
+		width: 49.4%;
+	}
+}
+
+@media screen and (max-width: 777px)
+{
+	.category a.pub_link
+	{
+		width: 49.5%;
+	}
+
+	.category a.pub_link + a.pub_link + a.pub_link
+	{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 621px)
+{
+	#head_post, #head_post2, .category a.pub_link
+	{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 507px)
+{
+	#recent_post a.pub_link
+	{
+		width: 100%;
+	}
+}

@@ -1,0 +1,57 @@
+input[type="text"]
+{
+	min-width: 100%;
+}
+
+#connect input[type="email"], #connect input[type="password"]
+{
+	min-width: 100%;
+}
+
+#connect
+{
+	display: inline-block;
+	width: 50%;
+	margin-left: 25%;
+}
+
+form[action="nouveau.php"] textarea
+{
+	height: 300px;
+	width: 83%;
+}
+
+form[action="nouveau.php"] div
+{
+	display: inline-block;
+	width: 15%;
+	vertical-align: top;
+}
+
+form[action="nouveau.php"] select
+{
+	width: 100%;
+}
+
+form[action="nouveau.php"] h3
+{
+	display: inline-block;
+	margin: 0;
+}
+
+@media screen and (max-width: 811px)
+{
+	form[action="nouveau.php"] div, form[action="nouveau.php"] textarea
+	{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 700px)
+{
+	#connect
+	{
+		min-width: 100%;
+		margin: 0;
+	}
+}

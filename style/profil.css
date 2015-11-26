@@ -1,0 +1,56 @@
+#profil h2
+{
+	text-align: center;
+}
+
+#profil img
+{
+	display: block;
+	width: 20%;
+	margin: auto;
+}
+
+#publications
+{
+	margin: auto;
+}
+
+#publications h3
+{
+	text-align: center;
+}
+
+#publications a
+{
+	display: inline-block;
+	margin-bottom: 10px;
+	overflow: hidden;
+	width: 19%;
+	min-width: 200px;
+	min-height: 200px;
+	background-color: orange;
+}
+
+@media screen and (max-width: 1018px)
+{
+	#publications a
+	{
+		width: 32%;
+	}
+}
+
+@media screen and (max-width: 762px)
+{
+	#publications a
+	{
+		width: 48%;
+	}
+}
+
+@media screen and (max-width: 506px)
+{
+	#publications a
+	{
+		width: 100%;
+	}
+}

@@ -1,0 +1,27 @@
+section h1
+{
+	text-align: center;
+}
+
+a.pub_link
+{
+	height: 200px;
+	width: 32%;
+}
+
+@media screen and (max-width: 763px)
+{
+	a.pub_link
+	{
+		width: 49%;
+	}
+}
+
+
+@media screen and (max-width: 507px)
+{
+	a.pub_link
+	{
+		width: 100%;
+	}
+}
