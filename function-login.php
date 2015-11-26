@@ -31,7 +31,7 @@ function disconnect() {
 }
 // Renvoie vrai si un utilisateur est connecté , faux dans le cas contraire
 function isLoged() {
-	if (! empty ( $_SESSION ['isloged'] )) {
+	if (isset($_SESSION['isloged']) && ! empty ( $_SESSION ['isloged'] )) {
 		return $_SESSION ['isloged'];
 	} else {
 		return false;
