@@ -32,10 +32,10 @@ function disconnect() {
 // Renvoie vrai si un utilisateur est connecté , faux dans le cas contraire
 function isLoged() {
 	if (isset($_SESSION['isloged']) && ! empty ( $_SESSION ['isloged'] )) {
-		return $_SESSION ['isloged'];
-	} else {
-		return false;
+		return true;
 	}
+	
+	return false;
 }
 function GetUsername()
 {
