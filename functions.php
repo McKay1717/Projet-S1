@@ -1,6 +1,4 @@
 <?php
-	
-
 	// Fonction de connexion à la BDD
 	function connectDB()
 	{
@@ -18,7 +16,6 @@
 		// Retourne le lien à la BDD
 		return $link;
 	}
-
 	// Fonction de requête à la BDD
 	// $req ==> requete à envoyer
 	function queryDB($req)
@@ -47,7 +44,8 @@
     function goPageTimer($url,$timer)
     {
         echo '
-          <script type="text/javascript">window.setTimeout("location=(\''.$url.'\');",'.$timer.');</script>
+        <script type="text/javascript">
+          	window.setTimeout("location=(\''.$url.'\');",'.$timer.');
+        </script>
         ';
     }
-?>

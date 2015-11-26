@@ -1,70 +1,53 @@
 <?php
+	include 'functions.php';
+	include 'function-login.php';
 
 
-  	//fonction get: recuperer la categorie d'un article
-  	function categoGet($id_Article)
-  	{
-		//variable associer au tableaux d'information sur l' article 
-		$article = queryDB("SELECT id_Categorie 
-                             FROM intitule_Categorie
-                            WHERE Categorie_article = " . $id_Article); 
-    		return $article;
+	// Fonction pour retourner l'id d'une catégorie
+	// d'un article grace à l'id de celui-ci
+  	function getArticleCategory($id_article)
+	{
+		// Requête pour récuperer l'id de la catégorie
+		// d'un article par l'id de celui-ci
+		$req = 'SELECT Categorie_Article
+                FROM Article
+                WHERE id_Article = "'.$id_article.'"';
+
+		// On retourne l'id
+		return queryDB($req);
   	}
 
 
-
-  	//fonction set: definit la categorie d'un article
-  	function categoSet($id_Article,$nom_CategoString)
+  	// Fonction pour changer la catégorie d'un article
+  	function setArticleCategory($id_article, $id_categorie)
   	{
-		$selectQuery = "SELECT id_Categorie 
-				FROM Categorie 
-				WHERE intitule_Categorie = " . $nom_CategoString;
-				
-		//tableau d'information sur le nom de la categorie	 	
-		$catego = queryDB($selectQuery)['id_Categorie'];
-		
-		//variable associer a la mise a jour de la categorie
-    		$updateQuery = "UPDATE Article
-		 	SET Categorie_article = " . $catego .
-		 	"WHERE id_Article = " . $id_Article;
-		 	
-    		//tableaux d'information sur la categorie
-    		queryDB($updateQuery);
+		// Requête pour changer la catégorie
+		$req = 'UPDATE Article
+				SET Categorie_Article = "'.$id_categorie.'"
+				WHERE id_Article = "'.$id_article.'"';
+
+		queryDB($req);
   	}
-
-
-
-  	//fonction retournant la liste de tout les IDs des categories
-  	function listIDcatego()
+  	
+  	// Fonction retournant la liste des IDs des categories
+  	function categoryIdList()
   	{
-  		$categorie= queryDB("SELECT id_Categorie
-  			FROM Categorie
-  			 ");
-  		return $categorie;
+		// Requête pour recuperer la liste des
+		// id des catégories
+		$req = 'SELECT id_Categorie
+  				FROM Categorie';
+
+		// On retourne la liste
+  		return queryDB($req);
   	}
-
-
-
-  	//fonction retournant la liste de tout les noms des categories
-  	function listNOMcatego()
+  	
+  	// Fonction retournant la liste des noms des categories
+  	function categoryNameList()
   	{
-  		$categorie= queryDB("SELECT intitule_Categorie
-  			FROM Categorie
-  			 ");
-  		return $categorie;
+		// Requête pour récuperer la liste de noms
+		$req = 'SELECT intitule_Categorie
+  				FROM Categorie';
+
+		// On retourne la liste
+		return queryDB($req);
   	}
-
-
-
-    //fonction retournant la liste de tout les Articles dans une categorie
-    function listArticlINcatego($id_Categorie)
-    {
-      $listAtricl= queryDB("SELECT id_Article
-        FROM Article
-        WHERE Categorie_article = " . $id_Categorie
-          );
-      return $listAtricl;
-    }
-
-
-?>
