@@ -11,7 +11,6 @@
     // Fonction de connexion retourne vrai si la connexion est établie , faux dans le cas contraire
     function login($username, $mdp)
     {
-
         session_start ();
 
         $link = connectDB ();
@@ -25,31 +24,25 @@
 
         $row = queryDB($query);
 
-        // Si une seule combinaison utilisateur/mdp ressort de la requête,
-        // on le connecte
-        if (count($row) == 1)
-        {
-            // Requête pour inserer l'id de l'utilisateur dans la table de connexion
-            $query = "INSERT INTO Connexion(User_Connexion)
-                      VALUES (".$row['id_Utilisateur'].")";
-            queryDB($query);
+        /* 
+         * Si une seule combinaison utilisateur/mdp ressort de la requête 
+         * c'est ok, sinon c'est qu'il y a une erreur.
+         */
 
-            // On met en variables de session
-            // Que l'utilisateur est connecté
-            $_SESSION['isloged'] = true;
-            // Son pseudo
-            $_SESSION['user'] = $username;
-            // Son id
-            $_SESSION['id_user'] = $row['id_Utilisateur'];
-            return true;
-        }
-        else
-        // Sinon c'est qu'il y a une erreur
-        {
-            // Login Not Ok
-            $_SESSION['isloged'] = false;
+        if(count($row) != 1)
             return false;
-        }
+            
+        // Requête pour inserer l'id de l'utilisateur dans la table de connexion
+        $query = "INSERT INTO Connexion(User_Connexion)
+                  VALUES (".$row['id_Utilisateur'].")";
+        queryDB($query);
+
+            // On met en variables de session son nom d'utilisateur et son id
+        $_SESSION['user'] = $username;
+        $_SESSION['id_user'] = $row['id_Utilisateur'];
+        
+        // Retourne vrai par défaut    
+        return true;
     }
 
 
@@ -74,10 +67,8 @@
     // Renvoie vrai si un utilisateur est connecté , faux dans le cas contraire
     function isLoged()
     {
-        if (isset($_SESSION['isloged']) && !empty ( $_SESSION['isloged'])) 
-        {
+        if (isset($_SESSION['id_user']) && isset($_SESSION['user']))
             return true;
-        }
     
         return false;
     }
