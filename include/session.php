@@ -1,6 +1,8 @@
 <?php
 	include 'function-login.php';
 	
+	//Créee la session si l'utilisateur est connecté
+	
 	function createSession()
 	{
 		if(session_start() && isLoged());
