@@ -67,10 +67,7 @@
     // Renvoie vrai si un utilisateur est connecté , faux dans le cas contraire
     function isLoged()
     {
-        if (isset($_SESSION['id_user']) && isset($_SESSION['user']))
-            return true;
-    
-        return false;
+        return isset($_SESSION['id_user']);
     }
 
     // Fonction qui retourne le nom de l'utilisateur
