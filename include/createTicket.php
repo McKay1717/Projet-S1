@@ -70,8 +70,17 @@
 
         return queryDB($req);
     }
-
-
+    
+    //Récupère un article
+    function getArticle($id_article)
+    {
+    	$req = 'SELECT nom_article, contenu_article
+    			FROM Article
+    			WHERE id_Article = "' . $id_article . '"';
+    			
+    	return queryDB($req);
+    }
+    
     //Fonction pour retourner la date d'un article depuis son id.
     function getArticleDate($id_article)
     {
