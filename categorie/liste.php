@@ -1,5 +1,7 @@
 <?php
-include('../include/functionCatego.php');
+include('../include/session.php');
+
+createSession();
 
 function listCategory()
 {
@@ -22,10 +24,11 @@ function listCategory()
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/categorie.css">
+		<link rel="stylesheet" href="../style/input.css">
 	</head>
 	<body>
 		<div id="container">
-			<?php require('../head.php'); ?>
+			<?php require('../include/head.php'); ?>
 			<div id="main">
 				<section>
 				<?php
@@ -49,7 +52,7 @@ function listCategory()
 				</section>
 			</div>
 			<?php
-			require('../foot.php');
+			require('../include/foot.php');
 			?>
 		</div>
 	</body>

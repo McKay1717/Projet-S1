@@ -10,7 +10,7 @@ if(preg_match('#/Projet-S1/(.+)\.php$#', $_SERVER['REQUEST_URI']) &&
 else
 	$home_link = $dir;
 
-include ($dir . 'include/function-login.php');
+include_once($dir . 'include/function-login.php');
 
 function usrProfil($dir)
 {
@@ -33,8 +33,6 @@ function usrProfil($dir)
 ?>
 
 <header>
-	<script language="javascript" type="text/javascript" src="js/nav.js"></script>
-
 	<div id="usr">
 		<?php usrProfil($dir); ?>
 	</div>
@@ -43,7 +41,7 @@ function usrProfil($dir)
 	</div>
 	<div id="search">
 		<form action="<?php echo $dir; ?>recherche.php">
-			<input type="text" name="search" />
+			<input type="text" name="search" placeholder="Rechercher" />
 			<input type="submit" value="OK" />
 		</form>
 	</div>

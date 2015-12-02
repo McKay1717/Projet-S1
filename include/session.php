@@ -1,5 +1,5 @@
 <?php
-	include 'function-login.php';
+	include_once 'function-login.php';
 	
 	//Créee la session si l'utilisateur est connecté
 	

@@ -1,5 +1,5 @@
 <?php
-function displayMinArticle($id, $name, $content)
+function displayMinArticle($id, $name, $content, $dir)
 {
 	$link = $dir . 'article/?id=' . $id;
 ?>

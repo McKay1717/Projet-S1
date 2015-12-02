@@ -1,13 +1,25 @@
 <?php
 include('../include/createTicket.php');
+include('../include/session.php');
 
-function displayArticle($id)
+createSession();
+
+function displayArticle()
 {
-	$title = getArticleTitle($id);
-	$content = getArticleCT($id);
+	if(isset($_GET['id']))
+	{
+		$article = getArticle($_GET['id']);
 
-	echo '<h1>' . $title . '</h1>';
-	echo $content;
+		if($article)
+		{
+			echo '<h1>' . $article['nom_article'] . '</h1>';
+			echo $article['contenu_article'];
+		}
+		else
+			echo '<p>Erreur 404 : Le contenu demandé n\'a pas été trouvé.</p>';
+	}
+	else
+		echo '<p>Aucun contenu n\'a été démandé.</p>';
 }
 
 ?>
@@ -18,49 +30,18 @@ function displayArticle($id)
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/article.css">
+		<link rel="stylesheet" href="../style/input.css">
 	</head>
 	<body>
 		<div id="container">
-			<?php require('../head.php'); ?>
+			<?php require('../include/head.php'); ?>
 			<div id="main">
 				<section>
-				<h1>Titre</h1>
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-				sed do eiusmod tempor incididunt ut labore et dolore magna 
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-				ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				Duis aute irure dolor in reprehende rit in voluptate velit 
-				esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-				sint occaecat cupidatat non proident, sunt in culpa qui 
-				officia deserunt mollit anim id est laborum
-				</p>
-
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-				sed do eiusmod tempor incididunt ut labore et dolore magna 
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-				ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				Duis aute irure dolor in reprehende rit in voluptate velit 
-				esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-				sint occaecat cupidatat non proident, sunt in culpa qui 
-				officia deserunt mollit anim id est laborum
-				</p>
-
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-				sed do eiusmod tempor incididunt ut labore et dolore magna 
-				aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-				ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-				Duis aute irure dolor in reprehende rit in voluptate velit 
-				esse cillum dolore eu fugiat nulla pariatur. Excepteur 
-				sint occaecat cupidatat non proident, sunt in culpa qui 
-				officia deserunt mollit anim id est laborum
-				</p>
+				<?php displayArticle(); ?>
 				</section>
 			</div>
 		<?php
-		require('../foot.php');
+		require('../include/foot.php');
 		?>
 		</div>
 	</body>

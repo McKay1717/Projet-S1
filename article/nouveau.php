@@ -1,5 +1,7 @@
 <?php
-include('../../functionCatego.php');
+include('../include/session.php');
+
+createSession();
 
 //if(!isLoged())
 //	header('Location: ../');
@@ -13,7 +15,7 @@ if(isset($_POST['title']) && isset($_POST['article_content']))
 function categorySelect()
 {
 ?>
-	<h3>Categorie de l'article :</h3>
+	Categorie :
 	<select name="category_select">
 		<option value=""></option>
 <?php
@@ -43,7 +45,7 @@ function categorySelect()
 	</head>
 	<body>
 		<div id="container">
-			<?php require('../head.php'); ?>
+			<?php require('../include/head.php'); ?>
 			<div id="main">
 				<section>
 					<form action="nouveau.php" method="POST">
@@ -62,7 +64,7 @@ function categorySelect()
 				</section>
 			</div>
 		<?php
-		require('../foot.php');
+		require('../include/foot.php');
 		?>
 		</div>
 	</body>

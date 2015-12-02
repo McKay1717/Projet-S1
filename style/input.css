@@ -1,11 +1,46 @@
-input[type="text"]
+input
 {
 	min-width: 100%;
 }
 
-#connect input[type="email"], #connect input[type="password"]
+input, textarea, select
 {
-	min-width: 100%;
+	border: 1px solid #AAA;
+	padding: 2px 8px;
+	margin-top: 2px;
+	background-color: #F9F9F9;
+}
+
+input:hover, input:focus, textarea:hover, textarea:focus
+{
+	border: 1px solid #777;
+	background-color: #FDFDFD;
+}
+
+header input[placeholder="Rechercher"]
+{
+	font-style: italic;
+	width: 80%;
+}
+
+header input[type="submit"]
+{
+	width: 10%;
+	margin-left: -10%;
+}
+
+input[type="submit"]
+{
+	color: #FAFAFA;
+	background-color: #48A200;
+	min-width: auto;
+	padding: 1px 8px;
+}
+
+input[type="submit"]:hover
+{
+	cursor: pointer;
+	background-color: #52AC0A;
 }
 
 #connect
@@ -18,7 +53,7 @@ input[type="text"]
 form[action="nouveau.php"] textarea
 {
 	height: 300px;
-	width: 83%;
+	width: 82%;
 }
 
 form[action="nouveau.php"] div

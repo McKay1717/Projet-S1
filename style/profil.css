@@ -23,12 +23,9 @@
 #publications a
 {
 	display: inline-block;
-	margin-bottom: 10px;
-	overflow: hidden;
 	width: 19%;
 	min-width: 200px;
 	min-height: 200px;
-	background-color: orange;
 }
 
 @media screen and (max-width: 1018px)

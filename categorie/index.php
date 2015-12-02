@@ -1,5 +1,13 @@
 <?php
-include('../minArticle.php');
+include('../include/minArticle.php');
+include('../include/session.php');
+
+createSession();
+
+function getArticleInCategory()
+{
+	
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +18,11 @@ include('../minArticle.php');
 		<link rel="stylesheet" href="../style/minArticle.css">
 		<link rel="stylesheet" href="../style/defil.css">
 		<link rel="stylesheet" href="../style/categorie.css">
+		<link rel="stylesheet" href="../style/input.css">
 	</head>
 	<body>
 		<div id="container">
-			<?php require('../head.php'); ?>
+			<?php require('../include/head.php'); ?>
 			<div id="main">
 				<section>
 
@@ -24,7 +33,7 @@ include('../minArticle.php');
 
 				<?php
 				for($i = 0; $i < 10; $i++):
-					displayMinArticle($i, 'Post ' . ($i + 1), 'blabla bla blablabla');
+					displayMinArticle($i, 'Post ' . ($i + 1), 'blabla bla blablabla', $dir);
 				endfor;
 				else:
 				echo '<p style="text-align:center;">Il n\'y a aucune catégorie de sélectionnée.</p>';
@@ -33,7 +42,7 @@ include('../minArticle.php');
 				</section>
 			</div>
 			<?php
-			require('../foot.php');
+			require('../include/foot.php');
 			?>
 		</div>
 	</body>

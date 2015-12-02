@@ -1,8 +1,10 @@
 <?php
-include("include/function-login.php");
-if(isset($_POST['user']) && isset($_POST['pass']) && 
-login($_POST['user'], $_POST['pass']))
+include ('include/function-login.php');
+
+if(isset($_POST['usr_name']) && isset($_POST['pass']) && 
+login($_POST['usr_name'], $_POST['pass']))
 	header('Location: .');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,12 +15,12 @@ login($_POST['user'], $_POST['pass']))
 	</head>
 	<body>
 		<div id="container">
-			<?php require('head.php'); ?>
+			<?php require('include/head.php'); ?>
 			<div id="main">
 				<section>
 					<form id="connect" action="connect.php" method="POST">
 						Nom d'utilisateur :<br />
-						<input type="text" name="user" />
+						<input type="text" name="usr_name" />
 
 						<br /><br />
 						Mot de passe :<br />
@@ -30,7 +32,7 @@ login($_POST['user'], $_POST['pass']))
 				</section>
 			</div>
 		<?php
-		require('foot.php');
+		require('include/foot.php');
 		?>
 		</div>
 	</body>

@@ -51,6 +51,7 @@ a[href="categorie/liste.php"]
 {
 	width: 60%;
 	height: 225px;
+	max-height: 225px;
 }
 
 #head_post2
@@ -108,7 +109,7 @@ a[href="categorie/liste.php"]
 	}
 }
 
-@media screen and (max-width: 507px)
+@media screen and (max-width: 518px)
 {
 	#recent_post a.pub_link
 	{

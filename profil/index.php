@@ -1,16 +1,33 @@
+<?php
+include('../include/minArticle.php');
+include('../include/session.php');
+
+createSession();
+
+function displayUsrProfil()
+{
+
+}
+
+function displayUsrInfo()
+{
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/profil.css">
+		<link rel="stylesheet" href="../style/minArticle.css">
+		<link rel="stylesheet" href="../style/input.css">
 	</head>
 	<body>
 		<div id="container">
-			<?php
-			require('../head.php');
-//			require('../nav.php');
-			?>
+			<?php require('../include/head.php'); ?>
+
 			<div id="main">
 				<section>
 					<div id="profil">
@@ -23,21 +40,16 @@
 					<div id="publications">
 						<h3>Publications</h3>
 
-<?php
-for($i = 0; $i < 10; $i++):
-?>
-						<a href="../article">
-							<h1>Article <?php echo ($i + 1)?></h1>
-							<p>Blabla blablabla blabla blablabla bla blablabla bla</p>
-						</a>
-<?php
-endfor;
-?>
+					<?php
+					for($i = 0; $i < 10; $i++):
+						displayMinArticle($i, 'Post ' . ($i + 1), 'blabla bla blablabla', $dir);
+					endfor;
+					?>
 					</div>
 				</section>
 			</div>
 			<?php
-			require('../foot.php');
+			require('../include/foot.php');
 			?>
 		</div>
 	</body>
