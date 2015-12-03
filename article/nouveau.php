@@ -1,4 +1,5 @@
 <?php
+include_once("../include/functionCatego.php");
 include('../include/session.php');
 
 createSession();
@@ -14,22 +15,25 @@ if(isset($_POST['title']) && isset($_POST['article_content']))
 
 function categorySelect()
 {
+	$c_name = categoryNameList();
+	$c_id = categoryIdList();
+	$i = 0;
+
+	echo '<br>';
 ?>
 	Categorie :
 	<select name="category_select">
-		<option value=""></option>
+		<option value="">Pas de catégorie</option>
 <?php
-/*
-	$c_name = listNOMcatego();
-	$c_id = listIDcatego();
-	$i = 0;
+
+
 
 	foreach($c_name as $c_key => $c_value)
 	{
 		echo '<option value="' . $c_id[$i] . '">' . $c_value . '</option>';
 		$i++;
 	}
-*/
+
 ?>
 	</select>
 <?php	
@@ -42,6 +46,8 @@ function categorySelect()
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/input.css">
+
+		<script src="/ckeditor/ckeditor.js"></script>
 	</head>
 	<body>
 		<div id="container">
@@ -49,17 +55,22 @@ function categorySelect()
 			<div id="main">
 				<section>
 					<form action="nouveau.php" method="POST">
-						Titre :<br />
-						<input type="text" name="title" />
+						Titre :<br>
+						<input type="text" name="title">
 
-						<br /><br />Contenu :<br />
-						<textarea name="article_content"></textarea>
+						<br><br>Contenu :<br>
+						<textarea name="message"
+								  class="ckeditor"
+								  id="message"
+								  required">
+                		</textarea>
 							<div>
-							<?php categorySelect(); ?>
+							<?php
+							categorySelect(); ?>
 							</div>
 
-						<br /><br />
-						<input type="submit" value="Valider" />
+						<br><br>
+						<input type="submit" value="Valider">
 					</form>
 				</section>
 			</div>

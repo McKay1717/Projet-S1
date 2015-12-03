@@ -58,8 +58,6 @@ form[action="nouveau.php"] textarea
 
 form[action="nouveau.php"] div
 {
-	display: inline-block;
-	width: 15%;
 	vertical-align: top;
 }
 

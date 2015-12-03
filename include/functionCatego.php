@@ -37,6 +37,7 @@
 		$req = 'SELECT id_Categorie
   				FROM Categorie';
 
+
 		// On retourne la liste
   		return queryDB($req);
   	}

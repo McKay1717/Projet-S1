@@ -8,12 +8,18 @@ function displayArticle()
 {
 	if(isset($_GET['id']))
 	{
+		$title = getArticleTitle($_GET['id']);
+		$content = getArticleCT($_GET['id']);
+
 		$article = getArticle($_GET['id']);
 
 		if($article)
 		{
-			echo '<h1>' . $article['nom_article'] . '</h1>';
-			echo $article['contenu_article'];
+            echo '<h1>' . $title . '</h1>';
+            echo $content;
+
+			/*echo '<h1>' . $article['nom_article'] . '</h1>';
+			echo $article['contenu_article'];*/
 		}
 		else
 			echo '<p>Erreur 404 : Le contenu demandé n\'a pas été trouvé.</p>';

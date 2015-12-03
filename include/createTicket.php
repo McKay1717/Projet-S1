@@ -47,6 +47,15 @@
         }
     }
 
+    // Fonction qui retourne la liste des id de tous les articles
+    function getArticleIdList()
+    {
+        $req = 'SELECT id_Article
+                FROM Article';
+
+        return queryDB($req);
+    }
+
 
     //Fonction pour retourner le contenu d'un article depuis son id.
     function getArticleCT($id_article)
@@ -56,7 +65,7 @@
                 FROM Article
                 WHERE id_Article = "'.$id_article.'"';
 
-        return queryDB($req);
+        return queryDB($req)[0];
     }
 
 
@@ -68,7 +77,7 @@
                 FROM Article
                 WHERE id_Article = "'.$id_article.'"';
 
-        return queryDB($req);
+        return queryDB($req)[0];
     }
 
 

@@ -1,4 +1,5 @@
 <?php
+include('include/createTicket.php');
 include('include/minArticle.php');
 include('include/session.php');
 
@@ -51,9 +52,16 @@ function homeLastPost($dir)
 		<h2><a href="recents/">Récent</a></h2>
 
 		<?php
-		for($i = 0; $i < 6; $i++):
-		displayMinArticle($i, 'Recent Post ' . ($i + 1), 'Blabla blablabla blabla blablabla bla', $dir);
-		endfor;
+
+		$idList = getArticleIdList();
+
+		foreach($idList as $value)
+		{
+			$title = getArticleTitle($value);
+			$content = getArticleCT($value);
+			displayMinArticle($value, $title, $content, $dir);
+		}
+
 		?>
 	</div>
 <?php
@@ -68,6 +76,8 @@ function homeLastPost($dir)
 		<link rel="stylesheet" href="style/minArticle.css">
 		<link rel="stylesheet" href="style/home.css">
 		<link rel="stylesheet" href="style/input.css">
+
+
 	</head>
 	<body>
 		<div id="container">
