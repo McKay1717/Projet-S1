@@ -82,6 +82,28 @@
 		return queryDB($req);
 	}
 
+	//Récupère un article selon une catégorie
+	function getArticleByCategory($id_category)
+    {
+		$req = 'SELECT id_Article, nom_article, contenu_article
+				From Article
+				WHERE Categorie_Article = "' . $id_category . '"';
+
+		return queryDB($req);
+    }
+    
+    //Récupère un article selon une catégorie dans la page d'accueil
+    function getArticleByCategoryHome($id_category)
+    {
+    	$req = 'SELECT id_Article, nom_article, contenu_article
+    			From Article
+				WHERE Categorie_Article = "' . $id_category . '"
+				ORDER BY date_parution_Article
+				LIMIT 3';
+
+        return queryDB($req);
+    }
+
     //Fonction pour retourner la date d'un article depuis son id.
     function getArticleDate($id_article)
     {
