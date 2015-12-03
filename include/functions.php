@@ -29,12 +29,22 @@
 
 		// Récupère une ligne de résultat sous forme de tableau associatif
 		// $ret ==> variable qui sera retournée
-		$ret = mysqli_fetch_assoc($que);
+		$ret = array();
+
+		// on retourne le contenu de la requête
+		// (tableau associatif) dans une variable
+		$res = mysqli_fetch_all($que);
+
+		// On reforme en un tableau simple
+		foreach($res as $key => $value)
+		{
+			$ret[$key] = $value[0];
+		}
 
 		// Fermeture de l'accès à la BDD
 		mysqli_close($link);
 
-		// Retourne le contenu de la requete
+		// Retourne le contenu du tableau simple
 		return $ret;
 	}
     
