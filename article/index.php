@@ -18,8 +18,6 @@ function displayArticle()
             echo '<h1>' . $title . '</h1>';
             echo $content;
 
-			/*echo '<h1>' . $article['nom_article'] . '</h1>';
-			echo $article['contenu_article'];*/
 		}
 		else
 			echo '<p>Erreur 404 : Le contenu demandé n\'a pas été trouvé.</p>';
