@@ -6,7 +6,7 @@ $config = array
 				"host" => "localhost",
 				"password" => "",
 				"user" => "",
-				"db" => "projet_tut_S1",
+				"db" => "",
 				"port" => 3306
 			)
 		);

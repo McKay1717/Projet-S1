@@ -6,22 +6,22 @@
 
 @font-face
 {
-	font-family: Open_Sans_up;
-	src: url("OpenSans.ttf") format("truetype");
+	font-family: Cantarell_up;
+	src: url("Cantarell-Regular.ttf") format("truetype");
 }
 
 html, body
 {
-	font-family: "Open Sans", Open_Sans_up, sans-serif;
+	font-family: Cantarell, Cantarell_up, sans-serif;
 	color: #353535;
 	margin: 0;
 	height: 100%;
+	background-color: #EEE;
 }
 
 h1, h2, h3, h4, h5, h6
 {
 	color: #111;
-	font-family: serif;
 }
 
 a
@@ -48,7 +48,7 @@ a:hover
 
 header
 {
-	background-color: #F9F9F9;
+	background-color: #FAFAFA;
 	margin: auto;
 	padding: 5px 0;
 	height: 50px;
@@ -144,11 +144,25 @@ footer p
 
 section
 {
+	background-color: #FAFAFA;
+	box-shadow: 0px 0px 5px #999; 
 	min-width: 300px;
 	width: 80%;
 	margin: 20px auto;
 	padding: 15px 2.5%;
-	font-size: 0.9em;
+}
+
+@media screen and (max-width: 952px)
+{
+	#main
+	{
+		padding-bottom: 80px;
+	}
+
+	footer
+	{
+		height: 80px;
+	}
 }
 
 @media screen and (max-width: 850px)
@@ -174,3 +188,31 @@ section
 		width: 25%;
 	}
 }
+
+@media screen and (max-width: 484px)
+{
+	#main
+	{
+		padding-bottom: 100px;
+	}
+
+	footer
+	{
+		height: 100px;
+	}
+}
+
+
+@media screen and (max-width: 328px)
+{
+	#main
+	{
+		padding-bottom: 120px;
+	}
+
+	footer
+	{
+		height: 120px;
+	}
+}
+

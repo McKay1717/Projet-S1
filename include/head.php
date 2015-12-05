@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Europe/Paris');
+
 if(preg_match('#/Projet-S1$#', getcwd()))
 	$dir = '';
 else
