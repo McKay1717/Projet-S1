@@ -33,7 +33,7 @@
 
 		// on retourne le contenu de la requête
 		// (tableau associatif) dans une variable
-		$res = mysqli_fetch_all($que);
+		for ($res = array(); $tmp = $que->fetch_array();) $res[] = $tmp;
 
 		// On reforme en un tableau simple
 		foreach($res as $key => $value)
