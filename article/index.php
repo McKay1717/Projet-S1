@@ -20,6 +20,7 @@ function displayArticle()
 
 		}
 		else
+			http_response_code(404);
 			echo '<p>Erreur 404 : Le contenu demandé n\'a pas été trouvé.</p>';
 	}
 	else
