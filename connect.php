@@ -2,7 +2,7 @@
 include_once ('include/function-login.php');
 
 if(isset($_POST['usr_name']) && isset($_POST['pass']) && 
-login($_POST['usr_name'], $_POST['pass']))
+login(htmlentities($_POST['usr_name']), htmlentities($_POST['pass'])))
 	header('Location: .');
 
 ?>

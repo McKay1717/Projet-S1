@@ -8,10 +8,10 @@ function displayArticle()
 {
 	if(isset($_GET['id']))
 	{
-		$title = getArticleTitle($_GET['id']);
-		$content = getArticleCT($_GET['id']);
+		$title = getArticleTitle(htmlentities($_GET['id']));
+		$content = getArticleCT(htmlentities($_GET['id']));
 
-		$article = getArticle($_GET['id']);
+		$article = getArticle(htmlentities($_GET['id']));
 
 		if($article)
 		{

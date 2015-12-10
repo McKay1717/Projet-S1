@@ -9,8 +9,7 @@ createSession();
 
 if(isset($_POST['title']) && isset($_POST['article_content']))
 {
-	echo $_POST['title'].'  '.$_POST['article_content'].'  '.$_POST['category_select'];
-	newArticle($_POST['title'], $_POST['article_content'], $_POST['category_select']);
+	newArticle(htmlentities($_POST['title']), htmlentities($_POST['article_content']), htmlentities($_POST['category_select']));
 	header('Location: ../recents/');
 }
 
