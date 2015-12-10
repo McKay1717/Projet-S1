@@ -1,20 +1,10 @@
 <?php
 include_once('../include/session.php');
+include_once('../include/functionCatego.php');
 
 createSession();
 
-function listCategory()
-{
-	$c_list = categoryNameList();
-	$c_id = categoryIdList();
-	$i = 0;
 
-	foreach($c_list as $c_key => $c_value)
-	{
-		echo '<a href=".?id=' . $c_id[$i] . '">' . $c_value . '</a>';
-		$i++;
-	}
-}
 
 ?>
 
@@ -43,11 +33,18 @@ function listCategory()
 				<?php
 				endif;
 
-				for($i = 0; $i < 10; $i++):
-				?>
-					<a href=".?id=1">Categorie</a> 
-				<?php
-				endfor;
+				$ListCategoID = categoryIdList();
+				$tmp = array();
+				foreach ($ListCategoID as $value)
+				{
+					array_push($tmp, $value['id_Categorie']);
+				}
+				$ListCategoID = $tmp;
+				unset($tmp);
+				foreach ($ListCategoID as $id)
+				{
+					echo "<a href=\".?id=".$id."\">".GetCategoryNameByiD($id)."</a> ";
+				}
 				?>
 				</section>
 			</div>

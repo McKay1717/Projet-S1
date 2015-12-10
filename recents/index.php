@@ -1,6 +1,7 @@
 <?php
 include_once('../include/minArticle.php');
 include_once('../include/session.php');
+include_once('../include/createTicket.php');
 
 createSession();
 ?>
@@ -22,8 +23,9 @@ createSession();
 				<h1>Articles récents</h1>
 
 				<?php
-				for($i = 0; $i < 10; $i++):
-					displayMinArticle($i, 'Article ' . ($i + 1), 'Blabla blablabla blabla blablabla bla blablabla bla', $dir);
+				$lastArticle = GetLastTenArticle();
+				for($i = 0; $i < count($lastArticle); $i++):
+					displayMinArticle($lastArticle[$i]['id_Article'], $lastArticle[$i]['nom_article'], $lastArticle[$i]['contenu_article'], $dir);
 				endfor;
 				?>
 				</section>

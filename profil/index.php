@@ -1,6 +1,8 @@
 <?php
 include_once('../include/minArticle.php');
 include_once('../include/session.php');
+include_once '../include/function-login.php';
+include_once('../include/createTicket.php');
 
 createSession();
 
@@ -31,7 +33,7 @@ function displayUsrInfo()
 			<div id="main">
 				<section>
 					<div id="profil">
-						<h2>Pierre-Paul Jacques</h2>
+						<h2><?php echo GetUsername();?></h2>
 						<img src="../img/user.png" />
 					</div>
 
@@ -41,8 +43,9 @@ function displayUsrInfo()
 						<h3>Publications</h3>
 
 					<?php
-					for($i = 0; $i < 10; $i++):
-						displayMinArticle($i, 'Post ' . ($i + 1), 'blabla bla blablabla', $dir);
+					$ListArticle = getArticleByAuthor(GetUserID());
+					for($i = 0; $i < count($ListArticle); $i++):
+						displayMinArticle($ListArticle[$i]['id_Article'], $ListArticle[$i]['nom_article'], $ListArticle[$i]['contenu_article'], $dir);
 					endfor;
 					?>
 					</div>

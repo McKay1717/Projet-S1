@@ -39,13 +39,7 @@ function usrProfil($dir)
 		<?php usrProfil($dir); ?>
 	</div>
 	<div id="site_title">
-		<h1><a href="<?php echo $home_link; ?>">Titre du blog</a></h1>
-	</div>
-	<div id="search">
-		<form action="<?php echo $dir; ?>recherche.php">
-			<input type="text" name="search" placeholder="Rechercher" />
-			<input type="submit" value="OK" />
-		</form>
+		<h1><a href="<?php echo $home_link; ?>">Le Libre & L'informatique</a></h1>
 	</div>
 </header>
 

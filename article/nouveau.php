@@ -1,6 +1,6 @@
 <?php
-include_once_once("../include/createTicket.php");
-include_once_once("../include/functionCatego.php");
+include_once("../include/createTicket.php");
+include_once("../include/functionCatego.php");
 include_once('../include/session.php');
 
 createSession();
@@ -11,28 +11,25 @@ if(isset($_POST['title']) && isset($_POST['article_content']))
 {
 	echo $_POST['title'].'  '.$_POST['article_content'].'  '.$_POST['category_select'];
 	newArticle($_POST['title'], $_POST['article_content'], $_POST['category_select']);
-	header('Location: ../recent/');
+	header('Location: ../recents/');
 }
 
 function categorySelect()
 {
 	$c_name = categoryNameList();
 	$c_id = categoryIdList();
-	$i = 0;
 
 	echo '<br>';
 ?>
 	Categorie :
 	<select name="category_select">
-		<option value="">Pas de catégorie</option>
 <?php
 
 
 
-	foreach($c_name as $c_key => $c_value)
+	for($i = 0; $i < count($c_id); $i++)
 	{
-		echo '<option value="' . $c_id[$i] . '">' . $c_value . '</option>';
-		$i++;
+		echo '<option value="' . $c_id[$i]['id_Categorie']. '">' . $c_name[$i]['intitule_Categorie'] . '</option>';
 	}
 
 ?>

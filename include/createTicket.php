@@ -16,14 +16,16 @@
                         contenu_Article,
                         nom_Article,
                         Categorie_Article,
-                        Auteur_Article
+                        Auteur_Article,
+            			last_modification_Article
                     )
                     VALUES
                     (
                         "'.$contenu.'",
                         "'.$titre.'",
                         "'.$categorie.'",
-                        "'.GetUsername().'"
+                        "'.GetUserID().'",
+                        "1"
                     )';
 
             queryDB($req);
@@ -134,6 +136,24 @@
                 WHERE id_Article = "'.$id_article.'"';
 
         return queryDB($req);
+    }
+    //Fonction pour retourner les articles d'un auteur depuis son id.
+    function getArticleByAuthor($id_user)
+    {
+    	$req = 'SELECT id_Article, nom_article, contenu_article
+                FROM Article
+                WHERE Auteur_Article  = "'.$id_user.'"';
+    
+    	return queryDB($req);
+    }
+    //Fonction pour retourner les 10 derniers article
+    function GetLastTenArticle()
+    {
+    	$req = 'SELECT id_Article, nom_article, contenu_article
+                FROM Article
+                ORDER BY date_parution_Article DESC LIMIT 0, 10';
+    
+    	return queryDB($req);
     }
 
 

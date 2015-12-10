@@ -67,16 +67,10 @@ function homeLastPost($dir)
 
 		<?php
 
-		$idList = getArticleIdList();
-
-		foreach($idList as $value)
-		{
-			foreach ($value as $value2)
-			$title = getArticleTitle($value2);
-			$content = getArticleCT($value2);
-			displayMinArticle($value2, $title, $content, $dir);
-		}
-
+		$lastArticle = GetLastTenArticle();
+		for($i = 0; $i < count($lastArticle); $i++):
+			displayMinArticle($lastArticle[$i]['id_Article'], $lastArticle[$i]['nom_article'], $lastArticle[$i]['contenu_article'], $dir);
+		endfor;
 		?>
 	</div>
 <?php
