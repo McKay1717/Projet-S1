@@ -31,8 +31,10 @@ function getArticleInCategory()
 				<?php
 				if(isset($_GET['id'])):
 				$id = htmlentities($_GET['id']);
+				$name = GetCategoryNameByiD($id);
+				if(!empty($name)):
 				?>
-				<h1><?php echo GetCategoryNameByiD($id);?></h1>
+				<h1><?php echo $name;?></h1>
 
 				<?php
 				$postList = getArticleByCategory($id);
@@ -49,7 +51,12 @@ function getArticleInCategory()
 					displayMinArticle($postList[$i]['id_Article'], $postList[$i]['nom_article'], $postList[$i]['contenu_article'], $dir);
 				}
 				else:
+				echo '<p style="text-align:center;">404 cette catégorie n\'éxite pas.</p>';
+				http_response_code(404);
+				endif;
+				else:
 				echo '<p style="text-align:center;">Il n\'y a aucune catégorie de sélectionnée.</p>';
+				http_response_code(404);
 				endif;
 				?>
 				</section>
