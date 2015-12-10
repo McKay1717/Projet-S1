@@ -6,9 +6,18 @@ include_once('../include/createTicket.php');
 
 createSession();
 
-function getArticleInCategory()
+if(isset($_GET['id']))
 {
-	
+	$id = htmlentities($_GET['id']);
+	$name = GetCategoryNameByiD($id);
+	if(empty($name))
+	{
+		http_response_code(404);
+	}
+		
+}else
+{
+	http_response_code(404);
 }
 ?>
 

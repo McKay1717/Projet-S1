@@ -4,7 +4,7 @@ include_once('../include/session.php');
 
 createSession();
 
-function displayArticle()
+function displayArticle($DoOutput)
 {
 	if(isset($_GET['id']))
 	{
@@ -15,18 +15,26 @@ function displayArticle()
 
 		if($article)
 		{
-            echo '<h1>' . $title . '</h1>';
-            echo $content;
+			if($DoOutput)
+			{
+            	echo '<h1>' . $title . '</h1>';
+            	echo $content;
+			}
 
 		}
 		else
+		{
 			http_response_code(404);
-			echo '<p>Erreur 404 : Le contenu demandé n\'a pas été trouvé.</p>';
+			if($DoOutput) echo '<p>Erreur 404 : Le contenu demandé n\'a pas été trouvé.</p>';
+		}
 	}
 	else
-		echo '<p>Aucun contenu n\'a été démandé.</p>';
+	{
+		http_response_code(404);
+		if($DoOutput) echo '<p>Aucun contenu n\'a été démandé.</p>';
+	}
 }
-
+displayArticle(false);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +50,7 @@ function displayArticle()
 			<?php require('../include/head.php'); ?>
 			<div id="main">
 				<section>
-				<?php displayArticle(); ?>
+				<?php displayArticle(true); ?>
 				</section>
 			</div>
 		<?php
