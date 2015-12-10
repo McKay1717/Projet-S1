@@ -1,5 +1,5 @@
 <?php
-include ('include/function-login.php');
+include_once ('include/function-login.php');
 
 if(isset($_POST['usr_name']) && isset($_POST['pass']) && 
 login($_POST['usr_name'], $_POST['pass']))

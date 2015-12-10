@@ -1,6 +1,6 @@
 <?php
-	include 'functions.php';
-	include 'function-login.php';
+	include_once 'functions.php';
+	include_once 'function-login.php';
 
 
 	// Fonction pour retourner l'id d'une catégorie
@@ -40,6 +40,12 @@
 
 		// On retourne la liste
   		return queryDB($req);
+  	}
+  	function GetCategoryNameByiD($id)
+  	{
+  		$req = 'SELECT intitule_Categorie
+  				FROM Categorie WHERE id_Categorie ='.$id;
+  		return queryDB($req)[0]['intitule_Categorie'];
   	}
   	
   	// Fonction retournant la liste des noms des categories

@@ -1,6 +1,8 @@
 <?php
-include('../include/minArticle.php');
-include('../include/session.php');
+include_once('../include/minArticle.php');
+include_once('../include/session.php');
+include_once('../include/functionCatego.php');
+include_once('../include/createTicket.php');
 
 createSession();
 
@@ -28,13 +30,24 @@ function getArticleInCategory()
 
 				<?php
 				if(isset($_GET['id'])):
+				$id = htmlentities($_GET['id']);
 				?>
-				<h1>Categorie bidule</h1>
+				<h1><?php echo GetCategoryNameByiD($id);?></h1>
 
 				<?php
-				for($i = 0; $i < 10; $i++):
-					displayMinArticle($i, 'Post ' . ($i + 1), 'blabla bla blablabla', $dir);
-				endfor;
+				$postList = getArticleByCategory($id);
+				if(count($postList) < 10)
+				{
+					$nb = count($postList);
+				
+				}else
+				{
+					$nb = 10;
+				}
+				for($i = 0; $i < $nb; $i++)
+				{
+					displayMinArticle($postList[$i]['id_Article'], $postList[$i]['nom_article'], $postList[$i]['contenu_article'], $dir);
+				}
 				else:
 				echo '<p style="text-align:center;">Il n\'y a aucune catégorie de sélectionnée.</p>';
 				endif;

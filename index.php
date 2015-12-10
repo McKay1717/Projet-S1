@@ -1,7 +1,8 @@
 <?php
-include('include/createTicket.php');
-include('include/minArticle.php');
-include('include/session.php');
+include_once('include/createTicket.php');
+include_once('include/functionCatego.php');
+include_once('include/minArticle.php');
+include_once('include/session.php');
 
 createSession();
 
@@ -9,10 +10,19 @@ function homeMainCategory($id, $dir)
 {
 ?>
 	<div class="category">
-		<h2><a href="categorie/?id=<?php echo $id; ?>">Catégorie 1</a></h2>
+		<h2><a href="categorie/?id=<?php echo $id; ?>"><?php echo GetCategoryNameByiD($id);?></a></h2>
 	<?php
-	for($i = 0; $i < 3; $i++):
-		displayMinArticle($i, 'Post ' . ($i + 1), 'Blabla blablabla blabla blablabla bla', $dir);
+	$postList = getArticleByCategory($id);
+	if(count($postList) < 3)
+	{
+		$nb = count($postList);
+		
+	}else
+	{
+		$nb = 3;
+	}
+	for($i = 0; $i < $nb; $i++):
+		displayMinArticle($postList[$i]['id_Article'], $postList[$i]['nom_article'], $postList[$i]['contenu_article'], $dir);
 	endfor;
 	?>
 	</div>
@@ -30,16 +40,20 @@ function homeMain($dir)
 {
 ?>
 	<div id="home_main">
-		<a id="head_post" class="pub_link" href="article/">
-			<h2>Head Post</h2>
-			<p>Blabla blablabla blabla blablabla bla</p>
-		</a>
-		<div id="head_post2">
-		<?php homeMainHead2($dir); ?>
-		</div>
-		<?php homeMainCategory(1, $dir); ?>
-		<?php homeMainCategory(2, $dir); ?>
-		<?php homeMainCategory(3, $dir); ?>
+		
+		<?php
+		$ListCategoID = categoryIdList();
+		$tmp = array();
+		foreach ($ListCategoID as $value)
+		{
+			array_push($tmp, $value['id_Categorie']);
+		}
+		$ListCategoID = $tmp;
+		unset($tmp);
+		foreach ($ListCategoID as $id)
+		{
+			homeMainCategory($id, $dir);
+		}?>
 		<a href="categorie/liste.php">Voir toutes les catégories disponibles</a>
 	</div>
 <?php
@@ -57,9 +71,10 @@ function homeLastPost($dir)
 
 		foreach($idList as $value)
 		{
-			$title = getArticleTitle($value);
-			$content = getArticleCT($value);
-			displayMinArticle($value, $title, $content, $dir);
+			foreach ($value as $value2)
+			$title = getArticleTitle($value2);
+			$content = getArticleCT($value2);
+			displayMinArticle($value2, $title, $content, $dir);
 		}
 
 		?>

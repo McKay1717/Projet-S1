@@ -1,6 +1,6 @@
 <?php
-    include 'functions.php';
-    include 'function-login.php';
+    include_once 'functions.php';
+    include_once 'function-login.php';
 
 
     //Fonction pour créer un nouvel article :
@@ -65,7 +65,7 @@
                 FROM Article
                 WHERE id_Article = "'.$id_article.'"';
 
-        return queryDB($req)[0];
+        return queryDB($req)[0]['contenu_Article'];
     }
 
 
@@ -77,7 +77,7 @@
                 FROM Article
                 WHERE id_Article = "'.$id_article.'"';
 
-        return queryDB($req)[0];
+        return queryDB($req)[0]['nom_Article'];
     }
 
 

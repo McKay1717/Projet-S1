@@ -21,13 +21,13 @@ choice:
 
 You are not required to, but if you want to explicitly declare the
 license you have chosen to be bound to when using, reproducing,
-modifying and distributing this software, just include a text file
+modifying and distributing this software, just include_once a text file
 titled "legal.txt" in your version of this software, indicating your
 license choice. In any case, your choice will not restrict any
 recipient of your version of this software to use, reproduce, modify
 and distribute this software under any of the above licenses.
 
-Sources of Intellectual Property Included in CKEditor
+Sources of Intellectual Property include_onced in CKEditor
 -----------------------------------------------------
 
 Where not otherwise indicated, all CKEditor content is authored by
@@ -35,24 +35,24 @@ CKSource engineers and consists of CKSource-owned intellectual
 property. In some specific instances, CKEditor will incorporate work
 done by developers outside of CKSource with their express permission.
 
-The following libraries are included in CKEditor under the MIT license (see Appendix D):
+The following libraries are include_onced in CKEditor under the MIT license (see Appendix D):
 
-* CKSource Samples Framework (included in the samples) - Copyright (c) 2014-2015, CKSource - Frederico Knabben.
-* PicoModal (included in `samples/js/sf.js`) - Copyright (c) 2012 James Frasca.
-* CodeMirror (included in the samples) - Copyright (C) 2014 by Marijn Haverbeke <marijnh@gmail.com> and others.
+* CKSource Samples Framework (include_onced in the samples) - Copyright (c) 2014-2015, CKSource - Frederico Knabben.
+* PicoModal (include_onced in `samples/js/sf.js`) - Copyright (c) 2012 James Frasca.
+* CodeMirror (include_onced in the samples) - Copyright (C) 2014 by Marijn Haverbeke <marijnh@gmail.com> and others.
 
-Parts of code taken from the following libraries are included in CKEditor under the MIT license (see Appendix D):
+Parts of code taken from the following libraries are include_onced in CKEditor under the MIT license (see Appendix D):
 
 * jQuery (inspired the domReady function, ckeditor_base.js) - Copyright (c) 2011 John Resig, http://jquery.com/
 
-The following libraries are included in CKEditor under the SIL Open Font License, Version 1.1 (see Appendix E):
+The following libraries are include_onced in CKEditor under the SIL Open Font License, Version 1.1 (see Appendix E):
 
-* Font Awesome (included in the toolbar configurator) - Copyright (C) 2012 by Dave Gandy.
+* Font Awesome (include_onced in the toolbar configurator) - Copyright (C) 2012 by Dave Gandy.
 
-The following libraries are included in CKEditor under the BSD-3 License (see Appendix F):
+The following libraries are include_onced in CKEditor under the BSD-3 License (see Appendix F):
 
-* highlight.js (included in the `codesnippet` plugin) - Copyright (c) 2006, Ivan Sagalaev.
-* YUI Library (included in the `uicolor` plugin) - Copyright (c) 2009, Yahoo! Inc.
+* highlight.js (include_onced in the `codesnippet` plugin) - Copyright (c) 2006, Ivan Sagalaev.
+* YUI Library (include_onced in the `uicolor` plugin) - Copyright (c) 2009, Yahoo! Inc.
 
 
 Trademarks
@@ -136,7 +136,7 @@ refers to any such program or work, and a "work based on the Program"
 means either the Program or any derivative work under copyright law:
 that is to say, a work containing the Program or a portion of it,
 either verbatim or with modifications and/or translated into another
-language.  (Hereinafter, translation is included without limitation in
+language.  (Hereinafter, translation is include_onced without limitation in
 the term "modification".)  Each licensee is addressed as "you".
 
 Activities other than copying, distribution and modification are not
@@ -227,7 +227,7 @@ making modifications to it.  For an executable work, complete source
 code means all the source code for all modules it contains, plus any
 associated interface definition files, plus the scripts used to
 control compilation and installation of the executable.  However, as a
-special exception, the source code distributed need not include
+special exception, the source code distributed need not include_once
 anything that is normally distributed (in either source or binary
 form) with the major components (compiler, kernel, and so on) of the
 operating system on which the executable runs, unless that component
@@ -487,7 +487,7 @@ Library" means either the Library or any derivative work under
 copyright law: that is to say, a work containing the Library or a
 portion of it, either verbatim or with modifications and/or translated
 straightforwardly into another language.  (Hereinafter, translation is
-included without limitation in the term "modification".)
+include_onced without limitation in the term "modification".)
 
   "Source code" for a work means the preferred form of the work for
 making modifications to it.  For a library, complete source code means
@@ -634,7 +634,7 @@ engineering for debugging such modifications.
   You must give prominent notice with each copy of the work that the
 Library is used in it and that the Library and its use are covered by
 this License.  You must supply a copy of this License.  If the work
-during execution displays copyright notices, you must include the
+during execution displays copyright notices, you must include_once the
 copyright notice for the Library among them, as well as a reference
 directing the user to the copy of this License.  Also, you must do one
 of these things:
@@ -672,9 +672,9 @@ of these things:
     materials or that you have already sent this user a copy.
 
   For an executable, the required form of the "work that uses the
-Library" must include any data and utility programs needed for
+Library" must include_once any data and utility programs needed for
 reproducing the executable from it.  However, as a special exception,
-the materials to be distributed need not include anything that is
+the materials to be distributed need not include_once anything that is
 normally distributed (in either source or binary form) with the major
 components (compiler, kernel, and so on) of the operating system on
 which the executable runs, unless that component itself accompanies
@@ -889,7 +889,7 @@ Version 1.1
      1.12. "You" (or "Your")  means an individual or a legal entity
      exercising rights under, and complying with all of the terms of, this
      License or a future version of this License issued under Section 6.1.
-     For legal entities, "You" includes any entity which controls, is
+     For legal entities, "You" include_onces any entity which controls, is
      controlled by, or is under common control with You. For purposes of
      this definition, "control" means (a) the power, direct or indirect,
      to cause the direction or management of such entity, whether by
@@ -965,11 +965,11 @@ Version 1.1
      governed by the terms of this License, including without limitation
      Section 2.2. The Source Code version of Covered Code may be
      distributed only under the terms of this License or a future version
-     of this License released under Section 6.1, and You must include a
+     of this License released under Section 6.1, and You must include_once a
      copy of this License with every copy of the Source Code You
      distribute. You may not offer or impose any terms on any Source Code
      version that alters or restricts the applicable version of this
-     License or the recipients' rights hereunder. However, You may include
+     License or the recipients' rights hereunder. However, You may include_once
      an additional document offering the additional rights described in
      Section 3.5.
 
@@ -989,7 +989,7 @@ Version 1.1
      3.3. Description of Modifications.
      You must cause all Covered Code to which You contribute to contain a
      file documenting the changes You made to create that Covered Code and
-     the date of any change. You must include a prominent statement that
+     the date of any change. You must include_once a prominent statement that
      the Modification is derived, directly or indirectly, from Original
      Code provided by the Initial Developer and including the name of the
      Initial Developer in (a) the Source Code, and (b) in any notice in an
@@ -1001,7 +1001,7 @@ Version 1.1
           If Contributor has knowledge that a license under a third party's
           intellectual property rights is required to exercise the rights
           granted by such Contributor under Sections 2.1 or 2.2,
-          Contributor must include a text file with the Source Code
+          Contributor must include_once a text file with the Source Code
           distribution titled "LEGAL" which describes the claim and the
           party making the claim in sufficient detail that a recipient will
           know whom to contact. If Contributor obtains such knowledge after
@@ -1013,10 +1013,10 @@ Version 1.1
           Code that new knowledge has been obtained.
 
           (b) Contributor APIs.
-          If Contributor's Modifications include an application programming
+          If Contributor's Modifications include_once an application programming
           interface and Contributor has knowledge of patent licenses which
           are reasonably necessary to implement that API, Contributor must
-          also include this information in the LEGAL file.
+          also include_once this information in the LEGAL file.
 
                (c)    Representations.
           Contributor represents that, except as disclosed pursuant to
@@ -1028,7 +1028,7 @@ Version 1.1
      3.5. Required Notices.
      You must duplicate the notice in Exhibit A in each file of the Source
      Code.  If it is not possible to put such notice in a particular Source
-     Code file due to its structure, then You must include such notice in a
+     Code file due to its structure, then You must include_once such notice in a
      location (such as a relevant directory) where a user would be likely
      to look for such a notice.  If You created one or more Modification(s)
      You may add your name as a Contributor to the notice described in
@@ -1048,10 +1048,10 @@ Version 1.1
      3.6. Distribution of Executable Versions.
      You may distribute Covered Code in Executable form only if the
      requirements of Section 3.1-3.5 have been met for that Covered Code,
-     and if You include a notice stating that the Source Code version of
+     and if You include_once a notice stating that the Source Code version of
      the Covered Code is available under the terms of this License,
      including a description of how and where You have fulfilled the
-     obligations of Section 3.2. The notice must be conspicuously included
+     obligations of Section 3.2. The notice must be conspicuously include_onced
      in any notice in an Executable version, related documentation or
      collateral in which You describe recipients' rights relating to the
      Covered Code. You may distribute the Executable version of Covered
@@ -1081,8 +1081,8 @@ Version 1.1
      statute, judicial order, or regulation then You must: (a) comply with
      the terms of this License to the maximum extent possible; and (b)
      describe the limitations and the code they affect. Such description
-     must be included in the LEGAL file described in Section 3.4 and must
-     be included with all distributions of the Source Code. Except to the
+     must be include_onced in the LEGAL file described in Section 3.4 and must
+     be include_onced with all distributions of the Source Code. Except to the
      extent prohibited by statute or regulation, such description must be
      sufficiently detailed for a recipient of ordinary skill to be able to
      understand it.
@@ -1300,7 +1300,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
+The above copyright notice and this permission notice shall be include_onced in
 all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -1338,7 +1338,7 @@ to any document created using the fonts or their derivatives.
 DEFINITIONS
 "Font Software" refers to the set of files released by the Copyright
 Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
+include_once source files, build scripts and documentation.
 
 "Reserved Font Name" refers to any names specified as such after the
 copyright statement(s).
@@ -1366,7 +1366,7 @@ in Original or Modified Versions, may be sold by itself.
 2) Original or Modified Versions of the Font Software may be bundled,
 redistributed and/or sold with any software, provided that each copy
 contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
+include_onced either as stand-alone text files, human-readable headers or
 in the appropriate machine-readable metadata fields within text or
 binary files as long as those fields can be easily viewed by the user.
 

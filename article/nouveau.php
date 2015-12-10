@@ -1,7 +1,7 @@
 <?php
-include_once("../include/createTicket.php");
-include_once("../include/functionCatego.php");
-include('../include/session.php');
+include_once_once("../include/createTicket.php");
+include_once_once("../include/functionCatego.php");
+include_once('../include/session.php');
 
 createSession();
 

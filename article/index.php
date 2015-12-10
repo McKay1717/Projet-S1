@@ -1,6 +1,6 @@
 <?php
-include('../include/createTicket.php');
-include('../include/session.php');
+include_once('../include/createTicket.php');
+include_once('../include/session.php');
 
 createSession();
 

@@ -6,12 +6,8 @@
 		include("config.php");
 
 		// Connection à la BDD 
-		// $link => Lien vers la BDD, variable retounée
-		$link = mysqli_connect($config['mysql']['host'], 
-			      	   		   $config['mysql']['user'], 
-			      	   		   $config['mysql']['password'], 
-			      	   		   $config['mysql']['db'],
-			      	   		   $config['mysql']['port']);
+		// $link => Lien vers la BDD (Objet PDO), variable retounée
+		$link = new PDO('mysql:host='.$config['mysql']['host'].';port='.$config['mysql']['port'].';dbname='.$config['mysql']['db'].';charset=UTF8;',$config['mysql']['user'],$config['mysql']['password'], array(PDO::ATTR_PERSISTENT=>true));
 
 		// Retourne le lien à la BDD
 		return $link;
@@ -25,24 +21,12 @@
 		// Envoie de la requete à la BDD 
 		// $que ==> enregistrement de ce que retourne la requete
 		// Arrête l'éxecution du bouzin et indique la requete qui a foiré
-		$que = mysqli_query($link, $req) or die($req);
-
-		// Récupère une ligne de résultat sous forme de tableau associatif
-		// $ret ==> variable qui sera retournée
-		$ret = array();
+		$que = $link->query($req) or die($req);
 
 		// on retourne le contenu de la requête
 		// (tableau associatif) dans une variable
-		for ($res = array(); $tmp = $que->fetch_array();) $res[] = $tmp;
+		$ret = $que->fetchAll();
 
-		// On reforme en un tableau simple
-		foreach($res as $key => $value)
-		{
-			$ret[$key] = $value[0];
-		}
-
-		// Fermeture de l'accès à la BDD
-		mysqli_close($link);
 
 		// Retourne le contenu du tableau simple
 		return $ret;

@@ -9,13 +9,12 @@
     function login($username, $mdp)
     {
         session_start ();
-        $link = connectDB ();
         // Requête qui va chercher dans la BDD la ligne qui correspond
         // à la combinaison utilisateur/mot de passe
         $query = 'SELECT id_Utilisateur
                   FROM Utilisateur
-                  WHERE nom_Utilisateur = "'.mysqli_real_escape_string($link, $username).'" AND
-                        MDP_Utilisateur = "'.mysqli_real_escape_string($link, HashPassword($mdp)).'"';
+                  WHERE nom_Utilisateur = "'.htmlentities($username).'" AND
+                        MDP_Utilisateur = "'.htmlentities(HashPassword($mdp)).'"';
         $row = queryDB($query);
         /* 
          * Si une seule combinaison utilisateur/mdp ressort de la requête 
@@ -23,14 +22,14 @@
          */
         if(count($row) != 1)
             return false;
-            
+         
         // Requête pour inserer l'id de l'utilisateur dans la table de connexion
         $query = "INSERT INTO Connexion(User_Connexion)
-                  VALUES (".$row['id_Utilisateur'].")";
+                  VALUES (".$row[0]['id_Utilisateur'].")";
         queryDB($query);
             // On met en variables de session son nom d'utilisateur et son id
         $_SESSION['user'] = $username;
-        $_SESSION['id_user'] = $row['id_Utilisateur'];
+        $_SESSION['id_user'] = $row[0]['id_Utilisateur'];
         
         // Retourne vrai par défaut    
         return true;

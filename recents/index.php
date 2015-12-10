@@ -1,6 +1,6 @@
 <?php
-include('../include/minArticle.php');
-include('../include/session.php');
+include_once('../include/minArticle.php');
+include_once('../include/session.php');
 
 createSession();
 ?>

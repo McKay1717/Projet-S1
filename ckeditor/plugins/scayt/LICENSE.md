@@ -15,9 +15,9 @@ Licensed under the terms of any of the following licenses at your choice:
 *   Mozilla Public License Version 1.1 or later (the "MPL"):
     http://www.mozilla.org/MPL/MPL-1.1.html
 
-You are not required to, but if you want to explicitly declare the license you have chosen to be bound to when using, reproducing, modifying and distributing this software, just include a text file titled "legal.txt" in your version of this software, indicating your license choice.
+You are not required to, but if you want to explicitly declare the license you have chosen to be bound to when using, reproducing, modifying and distributing this software, just include_once a text file titled "legal.txt" in your version of this software, indicating your license choice.
 
-Sources of Intellectual Property Included in this plugin
+Sources of Intellectual Property include_onced in this plugin
 --------------------------------------------------------
 
 Where not otherwise indicated, all plugin content is authored by CKSource engineers and consists of CKSource-owned intellectual property. In some specific instances, the plugin will incorporate work done by developers outside of CKSource with their express permission.
