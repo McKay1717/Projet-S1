@@ -68,7 +68,15 @@ function homeLastPost($dir)
 		<?php
 
 		$lastArticle = GetLastTenArticle();
-		for($i = 0; $i < count($lastArticle); $i++):
+		if(count($lastArticle) < 5)
+		{
+			$nb = count($lastArticle);
+		
+		}else
+		{
+			$nb = 5;
+		}
+		for($i = 0; $i < $nb; $i++):
 			displayMinArticle($lastArticle[$i]['id_Article'], $lastArticle[$i]['nom_article'], $lastArticle[$i]['contenu_article'], $dir);
 		endfor;
 		?>

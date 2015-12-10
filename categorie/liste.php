@@ -44,6 +44,7 @@ createSession();
 				foreach ($ListCategoID as $id)
 				{
 					echo "<a href=\".?id=".$id."\">".GetCategoryNameByiD($id)."</a> ";
+					echo '<br>';
 				}
 				?>
 				</section>
