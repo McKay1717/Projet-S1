@@ -18,7 +18,7 @@ function displayArticle($DoOutput)
 			if($DoOutput)
 			{
             	echo '<h1>' . $title . '</h1>';
-            	echo $content;
+            	echo html_entity_decode($content);
 			}
 
 		}
