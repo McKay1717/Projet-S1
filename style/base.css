@@ -152,6 +152,19 @@ section
 	padding: 15px 2.5%;
 }
 
+@media screen and (max-width: 1009px)
+{
+	header
+	{
+		height: 40px;
+	}
+
+	header div#site_title h1
+	{
+		font-size: 2.0em;
+	}
+}
+
 @media screen and (max-width: 952px)
 {
 	#main
@@ -186,6 +199,22 @@ section
 	header div#search
 	{
 		width: 25%;
+	}
+}
+
+@media screen and (max-width: 764px)
+{
+	header div#site_title h1
+	{
+		font-size: 1.8em;
+	}
+}
+
+@media screen and (max-width: 687px)
+{
+	header
+	{
+		height: 70px;
 	}
 }
 

@@ -39,7 +39,7 @@ function usrProfil($dir)
 		<?php usrProfil($dir); ?>
 	</div>
 	<div id="site_title">
-		<h1><a href="<?php echo $home_link; ?>">Le Libre & L'informatique</a></h1>
+		<h1><a href="<?php echo $home_link; ?>">Le Libre & l'Informatique</a></h1>
 	</div>
 </header>
 
