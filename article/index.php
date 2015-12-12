@@ -3,7 +3,6 @@ include_once('../include/createTicket.php');
 include_once('../include/session.php');
 
 createSession();
-$title = "";
 function displayArticle($DoOutput)
 {
 	if(isset($_GET['id']))
@@ -44,7 +43,7 @@ displayArticle(false);
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/article.css">
 		<link rel="stylesheet" href="../style/input.css">
-		<title><?php echo $title;?></title>
+		<title><?php echo getArticleTitle(htmlentities($_GET['id']));?></title>
 	</head>
 	<body>
 		<div id="container">
