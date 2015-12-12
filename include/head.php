@@ -28,7 +28,7 @@ function usrProfil($dir)
 	}
 ?>
 	<a href="<?php echo $link; ?>">
-		<img id="usr_img" src="<?php echo $img; ?>">
+		<img id="usr_img" alt="User image" src="<?php echo $img; ?>">
 	</a>
 <?php
 }
