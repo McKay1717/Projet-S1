@@ -41,5 +41,10 @@ function usrProfil($dir)
 	<div id="site_title">
 		<h1><a href="<?php echo $home_link; ?>">Le Libre & l'Informatique</a></h1>
 	</div>
+	<?php if(isLoged()):?>
+	<div id="search">
+		<a href=<?php echo $dir."logout.php"?>>Déconnexion</a>
+	</div>
+	<?php endif;?>
 </header>
 
