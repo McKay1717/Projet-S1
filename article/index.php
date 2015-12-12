@@ -37,7 +37,7 @@ displayArticle(false);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../style/base.css">

@@ -7,7 +7,7 @@ login(htmlentities($_POST['usr_name']), htmlentities($_POST['pass'])))
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="style/base.css">
