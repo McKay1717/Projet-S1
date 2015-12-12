@@ -11,7 +11,7 @@ if (isset($_POST['article_content']) && isset($_GET['id']))
 {
 	editArticle(htmlentities($_GET['id']), htmlentities($_POST['article_content']));
 	setArticleCategory(htmlentities($_GET['id']), htmlentities($_POST['category_select']));
-	header('Location: '.$dir."?id=".htmlentities($_GET['id']));
+	header('Location: ../article/?id='.htmlentities($_GET['id']));
 }
 
 function categorySelect()
