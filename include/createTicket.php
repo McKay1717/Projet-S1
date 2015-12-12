@@ -1,7 +1,23 @@
 <?php
     include_once 'functions.php';
     include_once 'function-login.php';
-
+    
+    //Créer une entré de modification et retourne son identifiant
+    function CreateAndGetModificationID()
+    {
+    	$ret = null;
+    	if(isLoged())
+    	{
+    		$req = 'INSERT INTO Modification() VALUES ()';
+    		$pdo = connectDB();
+    		$prepare = $pdo->prepare($req);
+    		$prepare->execute();
+    		$id = $pdo->lastInsertId();
+    		$ret = $id;
+    
+    	}
+    	return  $ret;
+    }
 
     //Fonction pour créer un nouvel article :
     function newArticle($titre, $contenu, $categorie)
@@ -25,7 +41,7 @@
                         "'.$titre.'",
                         "'.$categorie.'",
                         "'.GetUserID().'",
-                        "1"
+                        "'.CreateAndGetModificationID().'"
                     )';
 
             queryDB($req);
@@ -42,7 +58,8 @@
             // Met à jour le contenu d'un article dans la
             // table article depuis son id
             $req = 'UPDATE Article
-                    SET contenu_Article = "'.$newct.'"
+                    SET contenu_Article = "'.$newct.'",
+                    		last_modification_Article='.CreateAndGetModificationID().'
                     WHERE id_Article = "'.$id_article.'"';
 
             queryDB($req);
@@ -170,3 +187,4 @@
             queryDB($req);
         }
     }
+
