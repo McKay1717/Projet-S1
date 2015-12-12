@@ -44,6 +44,7 @@ displayArticle(false);
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/article.css">
 		<link rel="stylesheet" href="../style/input.css">
+		<title><?php echo $title;?></title>
 	</head>
 	<body>
 		<div id="container">

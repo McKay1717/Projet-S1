@@ -14,6 +14,7 @@ createSession();
 		<link rel="stylesheet" href="../style/minArticle.css">
 		<link rel="stylesheet" href="../style/defil.css">
 		<link rel="stylesheet" href="../style/input.css">
+		<title>Dernier article</title>
 	</head>
 	<body>
 		<div id="container">

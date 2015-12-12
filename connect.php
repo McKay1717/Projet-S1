@@ -12,6 +12,7 @@ login(htmlentities($_POST['usr_name']), htmlentities($_POST['pass'])))
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="style/base.css">
 		<link rel="stylesheet" href="style/input.css">
+		<title>Connexion</title>
 	</head>
 	<body>
 		<div id="container">

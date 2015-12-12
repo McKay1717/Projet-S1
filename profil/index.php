@@ -25,6 +25,7 @@ function displayUsrInfo()
 		<link rel="stylesheet" href="../style/profil.css">
 		<link rel="stylesheet" href="../style/minArticle.css">
 		<link rel="stylesheet" href="../style/input.css">
+		<title>Liste des articles de <?php echo GetUsername();?></title>
 	</head>
 	<body>
 		<div id="container">

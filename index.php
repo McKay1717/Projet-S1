@@ -93,6 +93,7 @@ function homeLastPost($dir)
 		<link rel="stylesheet" href="style/minArticle.css">
 		<link rel="stylesheet" href="style/home.css">
 		<link rel="stylesheet" href="style/input.css">
+		<title>Accueille</title>
 
 
 	</head>
