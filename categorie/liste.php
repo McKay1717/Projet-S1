@@ -15,6 +15,7 @@ createSession();
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/categorie.css">
 		<link rel="stylesheet" href="../style/input.css">
+		<title>Liste des catégories</title>
 	</head>
 	<body>
 		<div id="container">

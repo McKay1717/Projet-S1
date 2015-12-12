@@ -3,7 +3,7 @@ include_once('../include/createTicket.php');
 include_once('../include/session.php');
 
 createSession();
-
+$title = "";
 function displayArticle($DoOutput)
 {
 	if(isset($_GET['id']))
