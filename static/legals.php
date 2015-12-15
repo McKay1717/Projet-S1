@@ -11,6 +11,9 @@ createSession();
     <link rel="stylesheet" href="../style/base.css">
     <link rel="stylesheet" href="../style/article.css">
     <link rel="stylesheet" href="../style/input.css">
+    <title>
+        Mentions légales
+    </title>
 </head>
 <body>
 <div id="container">

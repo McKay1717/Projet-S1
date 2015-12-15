@@ -30,6 +30,9 @@ if(isset($_GET['id']))
 		<link rel="stylesheet" href="../style/defil.css">
 		<link rel="stylesheet" href="../style/categorie.css">
 		<link rel="stylesheet" href="../style/input.css">
+		<title>
+			Liste des articles de <?php echo $name;?>
+		</title>
 	</head>
 	<body>
 		<div id="container">
