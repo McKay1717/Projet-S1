@@ -1,5 +1,5 @@
 <?php
-include_once ('include/function-login.php');
+include_once('include/function-login.php');
 
 if(isset($_POST['usr_name']) && isset($_POST['pass']) && 
 login(htmlentities($_POST['usr_name']), htmlentities($_POST['pass'])))
@@ -10,13 +10,13 @@ login(htmlentities($_POST['usr_name']), htmlentities($_POST['pass'])))
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="style/base.css">
-		<link rel="stylesheet" href="style/input.css">
+		<link rel="stylesheet" href="../style/base.css">
+		<link rel="stylesheet" href="../style/input.css">
 		<title>Connexion</title>
 	</head>
 	<body>
 		<div id="container">
-			<?php require('include/head.php'); ?>
+			<?php require('../include/head.php'); ?>
 			<div id="main">
 				<section>
 					<form id="connect" action="connect.php" method="POST">
@@ -33,7 +33,7 @@ login(htmlentities($_POST['usr_name']), htmlentities($_POST['pass'])))
 				</section>
 			</div>
 		<?php
-		require('include/foot.php');
+		require('../include/foot.php');
 		?>
 		</div>
 	</body>

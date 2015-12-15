@@ -52,12 +52,11 @@ displayArticle(false);
 		<div id="container">
 			<?php require('../include/head.php'); ?>
 			<div id="main">
-				<div id="main">
-					<?php if(isLoged()):?>
-						<a href=<?php  echo $dir."article/edit.php?id=".htmlentities($_GET['id']);?>>
-							Editer
-						</a>
-					<?php endif;?>
+				<?php if(isLoged()):?>
+					<a href=<?php  echo $dir."article/edit.php?id=".htmlentities($_GET['id']);?>>
+						Editer
+					</a>
+				<?php endif;?>
 				<section>
 				<?php displayArticle(true); ?>
 				</section>
