@@ -70,7 +70,8 @@
     function getArticleIdList()
     {
         $req = 'SELECT id_Article
-                FROM Article';
+                FROM Article 
+                ORDER BY date_parution_Article DESC';
 
         return queryDB($req);
     }
@@ -126,7 +127,7 @@
     	$req = 'SELECT id_Article, nom_article, contenu_article
     			From Article
 				WHERE Categorie_Article = "' . $id_category . '"
-				ORDER BY date_parution_Article
+				ORDER BY date_parution_Article DESC
 				LIMIT 3';
 
         return queryDB($req);
