@@ -12,7 +12,7 @@ if(preg_match('#/Projet-S1/(.+)\.php$#', $_SERVER['REQUEST_URI']) &&
 else
 	$home_link = $dir;
 
-include_once($dir . 'include/function-login.php');
+include_once($dir . 'function-login.php');
 
 function usrProfil($dir)
 {
@@ -23,7 +23,7 @@ function usrProfil($dir)
 	}
 	else
 	{
-		$link = $dir . 'connect.php';
+		$link = $dir . 'static/connect.php';
 		$img = $dir . 'img/login.png';
 	}
 ?>
