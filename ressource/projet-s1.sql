@@ -89,7 +89,7 @@ CREATE TABLE `Connexion` (
   PRIMARY KEY (`id_Connexion`,`User_Connexion`),
   KEY `link-to-user-connextion` (`User_Connexion`),
   CONSTRAINT `link-to-user-connextion` FOREIGN KEY (`User_Connexion`) REFERENCES `Utilisateur` (`id_Utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `Connexion` (
 
 LOCK TABLES `Connexion` WRITE;
 /*!40000 ALTER TABLE `Connexion` DISABLE KEYS */;
-INSERT INTO `Connexion` VALUES (1,'2015-11-21 16:44:03',1),(2,'2015-11-21 16:47:36',1),(3,'2015-11-21 17:00:28',1),(4,'2015-12-10 12:45:30',1),(5,'2015-12-10 12:46:09',1),(6,'2015-12-10 12:46:41',1),(7,'2015-12-10 12:47:18',1),(8,'2015-12-10 12:58:36',1),(9,'2015-12-10 16:53:59',1),(10,'2015-12-11 08:16:20',1),(11,'2015-12-11 08:50:17',1),(12,'2015-12-11 08:54:44',1),(13,'2015-12-12 12:43:43',1),(14,'2015-12-12 21:06:03',1),(15,'2015-12-15 10:24:58',1),(16,'2015-12-15 11:34:44',1),(17,'2015-12-15 11:35:20',1),(18,'2015-12-15 12:58:11',1),(19,'2015-12-15 13:28:58',1),(20,'2015-12-15 13:29:10',1),(21,'2015-12-15 13:29:21',1),(22,'2015-12-15 13:31:21',1),(23,'2015-12-15 13:39:18',1),(24,'2015-12-15 16:57:16',1);
+INSERT INTO `Connexion` VALUES (1,'2015-11-21 16:44:03',1),(2,'2015-11-21 16:47:36',1),(3,'2015-11-21 17:00:28',1),(4,'2015-12-10 12:45:30',1),(5,'2015-12-10 12:46:09',1),(6,'2015-12-10 12:46:41',1),(7,'2015-12-10 12:47:18',1),(8,'2015-12-10 12:58:36',1),(9,'2015-12-10 16:53:59',1),(10,'2015-12-11 08:16:20',1),(11,'2015-12-11 08:50:17',1),(12,'2015-12-11 08:54:44',1),(13,'2015-12-12 12:43:43',1),(14,'2015-12-12 21:06:03',1),(15,'2015-12-15 10:24:58',1),(16,'2015-12-15 11:34:44',1),(17,'2015-12-15 11:35:20',1),(18,'2015-12-15 12:58:11',1),(19,'2015-12-15 13:28:58',1),(20,'2015-12-15 13:29:10',1),(21,'2015-12-15 13:29:21',1),(22,'2015-12-15 13:31:21',1),(23,'2015-12-15 13:39:18',1),(24,'2015-12-15 16:57:16',1),(25,'2015-12-15 17:50:08',2);
 /*!40000 ALTER TABLE `Connexion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +140,7 @@ CREATE TABLE `Utilisateur` (
   `Mail_Utilisateur` varchar(255) NOT NULL,
   `nom_Utilisateur` varchar(50) NOT NULL,
   PRIMARY KEY (`id_Utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE `Utilisateur` (
 
 LOCK TABLES `Utilisateur` WRITE;
 /*!40000 ALTER TABLE `Utilisateur` DISABLE KEYS */;
-INSERT INTO `Utilisateur` VALUES (1,'2015-11-21 16:22:08','7fce002887990ca249d1fc3460606df75d67dc7bbf473fd1ace5fb2127e45b2b','test@mail.tld','test');
+INSERT INTO `Utilisateur` VALUES (1,'2015-11-21 16:22:08','7fce002887990ca249d1fc3460606df75d67dc7bbf473fd1ace5fb2127e45b2b','test@mail.tld','test'),(2,'2015-12-15 17:47:27','d582c100fc19f93cc5a739f6246fb45a1914e99437b21f6ddbd4d79fb70a5a5a','david.trannoy@univ-fcomte.fr','david.trannoy');
 /*!40000 ALTER TABLE `Utilisateur` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -162,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-15 18:16:39
+-- Dump completed on 2015-12-15 19:14:29
