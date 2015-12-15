@@ -43,7 +43,6 @@ function categorySelect()
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/input.css">
-		<title>Creation</title>
 
 		<script src="/ckeditor/ckeditor.js"></script>
 	</head>

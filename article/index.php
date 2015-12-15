@@ -3,6 +3,7 @@ include_once('../include/createTicket.php');
 include_once('../include/session.php');
 
 createSession();
+
 function displayArticle($DoOutput)
 {
 	if(isset($_GET['id']))
@@ -43,15 +44,11 @@ displayArticle(false);
 		<link rel="stylesheet" href="../style/base.css">
 		<link rel="stylesheet" href="../style/article.css">
 		<link rel="stylesheet" href="../style/input.css">
-		<title><?php echo getArticleTitle(htmlentities($_GET['id']));?></title>
 	</head>
 	<body>
 		<div id="container">
 			<?php require('../include/head.php'); ?>
 			<div id="main">
-				<?php if(isLoged()):?>
-				<a href=<?php  echo $dir."article/edit.php?id=".htmlentities($_GET['id']);?>>Editer</a>
-				<?php endif;?>
 				<section>
 				<?php displayArticle(true); ?>
 				</section>
