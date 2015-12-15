@@ -12,7 +12,7 @@ if(preg_match('#/Projet-S1/(.+)\.php$#', $_SERVER['REQUEST_URI']) &&
 else
 	$home_link = $dir;
 
-include_once($dir . 'function-login.php');
+include_once($dir . 'include/function-login.php');
 
 function usrProfil($dir)
 {
