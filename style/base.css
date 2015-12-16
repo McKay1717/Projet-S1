@@ -43,7 +43,7 @@ a:hover
 
 #main
 {
-	padding-bottom: 60px
+	padding-bottom: 80px
 }
 
 header
@@ -130,7 +130,7 @@ footer
 	position: absolute;
 	bottom: 0;
 	width: 96%;
-	height: 60px;
+	height: 80px;
 	padding: 2px 2%;
 	border-top: 3px solid orange;
 	background-color: #00314D;
@@ -165,16 +165,16 @@ section
 	}
 }
 
-@media screen and (max-width: 952px)
+@media screen and (max-width: 943px)
 {
 	#main
 	{
-		padding-bottom: 80px;
+		padding-bottom: 100px;
 	}
 
 	footer
 	{
-		height: 80px;
+		height: 100px;
 	}
 }
 
@@ -218,21 +218,7 @@ section
 	}
 }
 
-@media screen and (max-width: 484px)
-{
-	#main
-	{
-		padding-bottom: 100px;
-	}
-
-	footer
-	{
-		height: 100px;
-	}
-}
-
-
-@media screen and (max-width: 328px)
+@media screen and (max-width: 485px)
 {
 	#main
 	{
@@ -242,6 +228,32 @@ section
 	footer
 	{
 		height: 120px;
+	}
+}
+
+@media screen and (max-width: 332px)
+{
+	#main
+	{
+		padding-bottom: 140px;
+	}
+
+	footer
+	{
+		height: 140px;
+	}
+}
+
+@media screen and (max-width: 257px)
+{
+	#main
+	{
+		padding-bottom: 180px;
+	}
+
+	footer
+	{
+		height: 180px;
 	}
 }
 
