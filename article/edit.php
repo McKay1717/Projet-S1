@@ -81,7 +81,7 @@ function categorySelect()
 				<?php else: ?>
 				<section>
 					<h1>
-					Une erreur est survenu
+					Une erreur est survenue
 					</h1>
 				</section>
 
